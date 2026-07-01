@@ -1,0 +1,149 @@
+/* CallToAction styling rules */
+.rcss-cta-section {
+  position: relative;
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.rcss-cta__bg-parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%; /* extra height allows vertical Y-scroll translations */
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rcss-cta__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(6, 16, 30, 0.95) 45%, rgba(6, 16, 30, 0.75) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.rcss-cta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left side text */
+.rcss-cta__text-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rcss-cta__badge {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-sm);
+}
+
+.rcss-cta__heading {
+  font-family: var(--font-family-headings);
+  font-size: 2.75rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+.rcss-cta__desc {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+}
+
+.rcss-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.rcss-cta__phone-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-white);
+  font-family: var(--font-family-headings);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast) ease-in-out;
+}
+
+.rcss-cta__phone-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(197, 168, 90, 0.05);
+}
+
+/* Right side officer visual */
+.rcss-cta__visual-side {
+  position: relative;
+  height: 380px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.rcss-cta__officer-img {
+  position: absolute;
+  bottom: -90px; /* Crops officer at bottom border for premium popup layout */
+  height: 480px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Responsive breakdowns */
+@media (max-width: 992px) {
+  .rcss-cta-section {
+    background-attachment: scroll; /* Fixed background has styling issues on mobile devices */
+    padding: var(--space-2xl) 0;
+  }
+
+  .rcss-cta-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-xl);
+  }
+
+  .rcss-cta__text-side {
+    align-items: center;
+  }
+
+  .rcss-cta__heading {
+    font-size: 2.25rem;
+  }
+
+  .rcss-cta__actions {
+    justify-content: center;
+  }
+
+  .rcss-cta__visual-side {
+    display: none; /* Hide absolute officer on tablets/mobiles to focus on the key CTA text */
+  }
+}

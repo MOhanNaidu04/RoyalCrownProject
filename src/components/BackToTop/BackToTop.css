@@ -1,0 +1,31 @@
+/* Floating Back to Top styles */
+.rcss-floating-back-to-top {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  background-color: #C5A85A; /* Sovereign Gold — hardcoded so dark mode variable changes don't affect it */
+  border: 2px solid #C5A85A;
+  color: #06101E; /* Always dark navy icon */
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform var(--transition-fast) ease, background-color var(--transition-fast) ease, color var(--transition-fast) ease, border-color var(--transition-fast) ease;
+}
+
+.rcss-floating-back-to-top:hover {
+  background-color: #06101E;
+  color: #C5A85A;
+  border-color: #C5A85A;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(197, 168, 90, 0.3);
+}
+
+.rcss-floating-back-to-top:active {
+  transform: translateY(-2px);
+}

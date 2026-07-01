@@ -1,0 +1,16 @@
+/* Sizing limits overrides */
+.rcss-container--sm {
+  max-width: var(--max-width-sm);
+}
+
+.rcss-container--md {
+  max-width: var(--max-width-md);
+}
+
+.rcss-container--lg {
+  max-width: var(--max-width-lg);
+}
+
+.rcss-container--xl {
+  max-width: var(--max-width-xl);
+}

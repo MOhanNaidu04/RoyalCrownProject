@@ -1,0 +1,113 @@
+/* --- Media Breakpoints overrides for 1920px, 1440px, 1200px, 992px, 768px, 576px, 390px --- */
+
+/* Desktop viewport-fit mode: keep the app on one screen and scroll inside the content area */
+@media (min-width: 993px) {
+  .rcss-page {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .rcss-home-page,
+  .rcss-about-page,
+  .rcss-services-page,
+  .rcss-contact-page,
+  .rcss-gallery-page {
+    min-height: 100%;
+  }
+
+  .rcss-home-page > *,
+  .rcss-about-page > *,
+  .rcss-services-page > *,
+  .rcss-contact-page > *,
+  .rcss-gallery-page > * {
+    max-width: 100%;
+  }
+
+  .rcss-section-heading {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+/* Huge Desktops (>= 1920px) */
+@media (min-width: 1920px) {
+  :root {
+    --max-width-xl: 1400px; /* Lock container wider for extreme display screens */
+  }
+}
+
+/* Medium Desktops (<= 1440px) */
+@media (max-width: 1440px) {
+  .rcss-container {
+    max-width: 1200px;
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+/* Small Desktops (<= 1200px) */
+@media (max-width: 1200px) {
+  .rcss-container {
+    max-width: 960px;
+  }
+  
+  :root {
+    --font-size-3xl: 2.75rem; /* Scale down hero copy text */
+  }
+}
+
+/* Tablets Landscape (<= 992px) */
+@media (max-width: 992px) {
+  .rcss-container {
+    max-width: 720px;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .rcss-grid--cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important; /* Scale to 2 columns */
+  }
+}
+
+/* Tablets Portrait (<= 768px) */
+@media (max-width: 768px) {
+  .rcss-container {
+    max-width: 540px;
+  }
+
+  .rcss-grid--cols-2,
+  .rcss-grid--cols-3 {
+    grid-template-columns: 1fr !important; /* Collapse grid blocks on tablets */
+  }
+
+  :root {
+    --font-size-3xl: 2.25rem;
+    --font-size-2xl: 1.75rem;
+  }
+}
+
+/* Mobile landscape (<= 576px) */
+@media (max-width: 576px) {
+  .rcss-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  :root {
+    --font-size-3xl: 2rem;
+    --font-size-2xl: 1.5rem;
+  }
+}
+
+/* Small mobile devices (<= 390px - e.g. iPhone) */
+@media (max-width: 390px) {
+  .rcss-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  :root {
+    --font-size-3xl: 1.75rem; /* Shrink headings to avoid word breaks */
+    --font-size-2xl: 1.35rem;
+    --space-lg: 0.8rem; /* Pack margins tighter */
+  }
+}

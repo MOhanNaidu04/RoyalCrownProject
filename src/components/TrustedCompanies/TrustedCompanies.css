@@ -1,0 +1,129 @@
+/* TrustedCompanies styling rules */
+.rcss-trusted-section {
+  padding: var(--space-3xl) 0;
+  background-color: var(--color-bg-light);
+  overflow: hidden;
+}
+
+/* Horizontal Infinite Marquee Carousel */
+.rcss-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: var(--space-xl) 0;
+  /* Blur gradient overlay on left/right edges for premium styling */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+}
+
+.rcss-marquee__inner {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+/* Duplicated groups animate together infinitely */
+.rcss-marquee__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--space-3xl);
+  min-width: 100%;
+  animation: scroll-marquee 18s linear infinite;
+  padding-right: var(--space-3xl);
+}
+
+.rcss-marquee:hover .rcss-marquee__group {
+  animation-play-state: paused; /* Pause marquee on user hover */
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.rcss-marquee__logo-wrapper {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-dark);
+  opacity: 0.8;
+  transform: scale(1.4); /* Increase size significantly */
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  /* Add a gentle floating animation to the items as they flow */
+  animation: rcss-logo-bob 3s ease-in-out infinite alternate;
+}
+
+/* Stagger the bobbing animation for organic feel */
+.rcss-marquee__group > div:nth-child(even) {
+  animation-delay: 1.5s;
+}
+
+.rcss-marquee__logo-wrapper:hover {
+  opacity: 1;
+  color: var(--color-accent);
+  filter: drop-shadow(0 4px 12px rgba(197, 168, 90, 0.4));
+  /* Override the animation with a specific scale on hover */
+  animation: none;
+  transform: scale(1.55) translateY(-6px);
+}
+
+@keyframes rcss-logo-bob {
+  0% { transform: scale(1.4) translateY(0); }
+  100% { transform: scale(1.4) translateY(-10px); }
+}
+
+/* Section divider line */
+.rcss-trusted-section__divider {
+  width: 100%;
+  max-width: var(--max-width-lg);
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-border-light) 20%, var(--color-border-light) 80%, transparent);
+  margin: var(--space-3xl) auto;
+}
+
+/* Stats metrics rows spacing */
+.rcss-trusted-section__stats {
+  margin-top: var(--space-xl);
+}
+
+.rcss-trust-card {
+  text-align: center;
+  padding: var(--space-xl) !important;
+}
+
+.rcss-trust-card__stat {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.rcss-counter-number {
+  display: inline-block;
+}
+
+.rcss-trust-card__title {
+  display: block;
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.rcss-trust-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+  margin-bottom: 0;
+}

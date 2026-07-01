@@ -1,0 +1,18 @@
+/* ScrollProgress indicator styles */
+.rcss-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+  z-index: 999999; /* overlay above navbar */
+  pointer-events: none;
+}
+
+.rcss-scroll-progress__bar {
+  height: 100%;
+  background-color: var(--color-accent); /* Sovereign Gold */
+  width: 0%;
+  transition: width 0.15s ease-out;
+}

@@ -1,0 +1,79 @@
+/* --- Global Typography Scale --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-family-headings);
+  color: var(--color-primary);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-md);
+}
+
+/* --- Anchor & Links --- */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* --- Typography Helpers --- */
+.rcss-txt-lead {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-muted);
+}
+
+.rcss-txt-small {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.rcss-txt-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.rcss-txt-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.rcss-txt-center {
+  text-align: center;
+}
+
+.rcss-txt-gold {
+  color: var(--color-accent);
+}
+
+.rcss-txt-navy {
+  color: var(--color-primary);
+}

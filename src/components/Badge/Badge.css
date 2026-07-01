@@ -1,0 +1,39 @@
+/* Badge styling rules */
+.rcss-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xs) var(--space-xs);
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.rcss-badge--primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+}
+
+.rcss-badge--secondary {
+  background-color: var(--color-accent-light);
+  color: var(--color-primary);
+}
+
+.rcss-badge--success {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--color-success);
+}
+
+.rcss-badge--warning {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--color-warning);
+}
+
+.rcss-badge--danger {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--color-danger);
+}

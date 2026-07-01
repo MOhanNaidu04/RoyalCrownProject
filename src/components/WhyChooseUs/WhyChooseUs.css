@@ -1,0 +1,10 @@
+/* WhyChooseUs section styling */
+.rcss-why-section {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-white);
+}
+
+.rcss-why-section__grid {
+  margin-top: var(--space-2xl);
+  gap: var(--space-lg);
+}

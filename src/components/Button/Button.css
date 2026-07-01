@@ -1,0 +1,54 @@
+/* Button sizing and layout extensions */
+
+/* Sizes */
+.rcss-btn--sm {
+  padding: var(--space-2xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
+}
+
+.rcss-btn--md {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-md);
+  border-radius: var(--radius-md);
+}
+
+.rcss-btn--lg {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-lg);
+}
+
+/* Width modifier */
+.rcss-btn--full-width {
+  display: flex;
+  width: 100%;
+}
+
+/* Icon layout details */
+.rcss-btn--has-icon {
+  gap: var(--space-xs);
+}
+
+.rcss-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rcss-btn__content {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Danger Variant (breach/intrusion alerts) */
+.rcss-btn--danger {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+  color: var(--color-white);
+}
+
+.rcss-btn--danger:hover:not(:disabled) {
+  background-color: #C53030;
+  border-color: #C53030;
+}

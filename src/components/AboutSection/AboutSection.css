@@ -1,0 +1,252 @@
+/* AboutSection layout styling */
+.rcss-about-section {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-white);
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.rcss-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-3xl);
+  align-items: flex-start;
+}
+
+/* Visual Column */
+.rcss-about__visual-side {
+  position: relative;
+  width: 100%;
+}
+
+.rcss-about__image-container {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible; /* allows badge to overlap margins */
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-md);
+}
+
+.rcss-about__image {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+/* Floating Experience Badge */
+.rcss-about__experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-accent);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  min-width: 160px;
+  animation: pulseGold 2.5s infinite;
+}
+
+.rcss-about__exp-number {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+
+.rcss-about__exp-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: var(--space-2xs);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+/* Narrative Column */
+.rcss-about__content-side {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tabs list */
+.rcss-about__tabs {
+  display: flex;
+  gap: var(--space-md);
+  border-bottom: 2px solid var(--color-border-light);
+  margin-bottom: var(--space-md);
+}
+
+.rcss-about__tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: var(--space-xs) 0;
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  margin-bottom: -2px; /* aligns active borders over separator */
+}
+
+.rcss-about__tab-btn:hover {
+  color: var(--color-primary);
+}
+
+.rcss-about__tab-btn--active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Tabs Viewport box */
+.rcss-about__tabs-body {
+  min-height: 180px;
+  margin-bottom: var(--space-lg);
+}
+
+.rcss-about__tab-content-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.rcss-about__tab-icon-wrapper {
+  background-color: var(--color-bg-light);
+  padding: var(--space-xs);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border-light);
+}
+
+.rcss-about__tab-text {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+/* CEO Blockquote */
+.rcss-about__ceo-quote {
+  border-left: 3px solid var(--color-accent);
+  background-color: var(--color-bg-light);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-sm);
+  margin: var(--space-xs) 0 0 0;
+}
+
+.rcss-about__quote-text {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  font-style: italic;
+  line-height: var(--line-height-normal);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.rcss-about__quote-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.rcss-about__quote-author {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  font-style: normal;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .rcss-about-section {
+  background-color: var(--color-bg-dark);
+}
+
+[data-theme="dark"] .rcss-about__image-container {
+  border-color: var(--color-border-dark);
+}
+
+[data-theme="dark"] .rcss-about__tabs {
+  border-bottom-color: var(--color-border-dark);
+}
+
+[data-theme="dark"] .rcss-about__tab-btn {
+  color: #C7D2E3;
+}
+
+[data-theme="dark"] .rcss-about__tab-btn:hover {
+  color: var(--color-accent-hover);
+}
+
+[data-theme="dark"] .rcss-about__tab-btn--active {
+  color: var(--color-accent-hover);
+}
+
+[data-theme="dark"] .rcss-about__tab-icon-wrapper {
+  background-color: var(--color-surface-dark);
+  border-color: var(--color-border-dark);
+}
+
+[data-theme="dark"] .rcss-about__tab-text {
+  color: var(--color-text-light);
+}
+
+[data-theme="dark"] .rcss-about__ceo-quote {
+  background-color: var(--color-surface-dark);
+  border-left-color: var(--color-accent);
+}
+
+[data-theme="dark"] .rcss-about__quote-text {
+  color: var(--color-text-white);
+}
+
+[data-theme="dark"] .rcss-about__quote-author {
+  color: var(--color-text-muted);
+}
+
+/* Responsive grid collapsing */
+@media (max-width: 992px) {
+  .rcss-about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .rcss-about__visual-side {
+    max-width: 550px;
+    margin: 0 auto var(--space-lg) auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .rcss-about__experience-badge {
+    right: 10px;
+    bottom: -15px;
+    min-width: 130px;
+    padding: var(--space-xs) var(--space-md);
+  }
+  
+  .rcss-about__exp-number {
+    font-size: var(--font-size-xl);
+  }
+  
+  .rcss-about__tabs {
+    justify-content: space-around;
+  }
+}

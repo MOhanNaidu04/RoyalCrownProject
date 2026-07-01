@@ -1,0 +1,41 @@
+/* ScrollToTop Floating styles */
+.rcss-scroll-to-top {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal), background-color var(--transition-fast), visibility var(--transition-normal), border-color var(--transition-fast);
+  z-index: 999;
+  box-shadow: var(--shadow-md);
+}
+
+.rcss-scroll-to-top:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.rcss-scroll-to-top--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.rcss-scroll-to-top__arrow {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}

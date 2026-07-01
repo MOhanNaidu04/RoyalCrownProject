@@ -1,0 +1,67 @@
+/* SectionHeading layout rules */
+.rcss-section-heading {
+  margin-bottom: var(--space-2xl);
+  width: 100%;
+}
+
+.rcss-section-heading--center {
+  text-align: center;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rcss-section-heading--left {
+  text-align: left;
+  max-width: 800px;
+}
+
+.rcss-section-heading__badge {
+  display: block;
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-sm);
+  opacity: 0.9;
+}
+
+.rcss-section-heading__title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.rcss-section-heading__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+.rcss-section-heading--center .rcss-section-heading__title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rcss-section-heading--left .rcss-section-heading__title::after {
+  left: 0;
+}
+
+.rcss-section-heading__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}

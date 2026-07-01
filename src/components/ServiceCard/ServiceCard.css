@@ -1,0 +1,39 @@
+/* ServiceCard styles */
+.rcss-service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg) !important;
+}
+
+.rcss-service-card__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.rcss-service-card__title {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.rcss-service-card__desc {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-muted);
+  flex-grow: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.rcss-service-card__action {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Dark mode */
+[data-theme="dark"] .rcss-service-card__title {
+  color: #F4F6F9;
+}

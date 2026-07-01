@@ -1,0 +1,4 @@
+/* Gallery page layout skeleton */
+.rcss-gallery-page {
+  padding: var(--space-2xl) 0;
+}
