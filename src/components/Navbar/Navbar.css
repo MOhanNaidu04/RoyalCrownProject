@@ -190,6 +190,22 @@
   color: var(--color-accent);
 }
 
+[data-theme="dark"] .rcss-navbar__dropdown {
+  background-color: #121D2C;
+  border-color: #223247;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .rcss-navbar__dropdown-link {
+  color: #F4F6F9;
+}
+
+[data-theme="dark"] .rcss-navbar__dropdown-link:hover,
+[data-theme="dark"] .rcss-navbar__dropdown-link--active {
+  background-color: rgba(201, 20, 20, 0.14);
+  color: #FDE8E8;
+}
+
 .rcss-navbar__actions {
   display: flex;
   align-items: center;
