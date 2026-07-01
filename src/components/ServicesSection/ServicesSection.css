@@ -48,6 +48,11 @@
 
 /* Tablets — 2-column grid */
 @media (max-width: 768px) {
+  .rcss-services-showcase {
+    max-height: none;
+    overflow-y: visible;
+  }
+
   .rcss-services__filters {
     gap: var(--space-2xs);
   }
@@ -74,6 +79,11 @@
 
 /* Small mobile — full-width filter buttons */
 @media (max-width: 390px) {
+  .rcss-services-showcase {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
   .rcss-services__filters {
     grid-template-columns: 1fr;
   }

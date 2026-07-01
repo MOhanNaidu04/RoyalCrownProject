@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* Accessibility Keyboard Focus outline rings */
 :focus-visible {
   outline: 3px solid var(--color-accent) !important;
@@ -14,16 +19,19 @@ body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
 }
 
 body {
+  width: 100%;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   background-color: var(--color-bg-light);
   color: var(--color-text-dark);
+  overflow-x: hidden;
 }
 
 img, picture {
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 input, button, textarea, select {
