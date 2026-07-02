@@ -1,0 +1,1 @@
+import{j as t}from"./vendor-framer-BOANVNyx.js";import"./vendor-react-CJhClI2d.js";import"./index-B00qhEE9.js";import{C as r}from"./Contact-CsKgiYgm.js";import"./vendor-gsap-SFc2wnMY.js";import"./vendor-swiper-CLjMzi4o.js";function c(){return t.jsx("div",{className:"rcss-page rcss-contact-page",children:t.jsx(r,{})})}export{c as Contact,c as default};
