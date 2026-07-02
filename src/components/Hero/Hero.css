@@ -1,6 +1,6 @@
 .rcss-hero-section {
   position: relative;
-  min-height: 90vh;
+  min-height: 82vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -9,7 +9,7 @@
     linear-gradient(112deg, rgba(3, 9, 19, 0.96) 0%, rgba(6, 16, 30, 0.86) 46%, rgba(21, 33, 40, 0.76) 100%),
     url('@/assets/images/operations_center.png') center / cover no-repeat;
   color: var(--color-white);
-  padding: 3rem 0 2rem;
+  padding: 2.5rem 0 1.75rem;
   border-top: none !important;
   border-bottom: none !important;
   outline: none !important;
@@ -100,9 +100,9 @@
 
 .rcss-hero__title-heading {
   font-family: var(--font-family-headings);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
   font-weight: var(--font-weight-bold);
-  line-height: 1.12;
+  line-height: 1.06;
   color: var(--color-white);
   margin-bottom: var(--space-lg);
   letter-spacing: 0;
@@ -148,11 +148,11 @@
 }
 
 .rcss-hero__subtitle-paragraph {
-  font-size: var(--font-size-lg);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
   line-height: var(--line-height-relaxed);
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: var(--space-2xl);
-  max-width: 560px;
+  margin-bottom: var(--space-xl);
+  max-width: 52ch;
 }
 
 .rcss-hero__action-buttons {
@@ -176,12 +176,12 @@
 .rcss-hero__statistics {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
   background-color: rgba(4, 16, 25, 0.64);
   border: 1px solid rgba(201, 20, 20, 0.32);
-  padding: var(--space-md) var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius-md);
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-xl);
   width: fit-content;
   backdrop-filter: blur(12px);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
@@ -196,14 +196,14 @@
 
 .rcss-hero-metric__val {
   font-family: var(--font-family-headings);
-  font-size: var(--font-size-xl);
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
   font-weight: var(--font-weight-bold);
   color: var(--color-accent);
   line-height: 1.2;
 }
 
 .rcss-hero-metric__lbl {
-  font-size: var(--font-size-xs);
+  font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.65);
   white-space: nowrap;
 }
@@ -240,8 +240,8 @@
 .rcss-hero__graphics-viewport {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  height: 650px;
+  max-width: 460px;
+  height: 600px;
   overflow: hidden;
   border-radius: 10px;
   background:
@@ -417,7 +417,7 @@
 @media (max-width: 1100px) {
   .rcss-hero-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
     text-align: center;
   }
 
@@ -438,19 +438,19 @@
   }
 
   .rcss-hero__graphics-viewport {
-    max-width: 420px;
-    height: 550px;
+    max-width: 400px;
+    height: 520px;
   }
 }
 
 @media (max-width: 768px) {
   .rcss-hero-section {
-    padding: 6rem 0 3rem;
+    padding: 5.25rem 0 2.5rem;
   }
 
   .rcss-hero__statistics {
-    gap: var(--space-lg);
-    padding: var(--space-md) var(--space-lg);
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
   }
 }
 
@@ -480,11 +480,11 @@
 
 @media (max-width: 390px) {
   .rcss-hero__title-heading {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .rcss-hero-section {
-    padding: 5.5rem 0 2.5rem;
+    padding: 5rem 0 2.25rem;
   }
 }
 

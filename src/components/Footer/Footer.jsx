@@ -9,6 +9,11 @@ import './Footer.css';
 export const Footer = memo(function Footer() {
   const handleBackToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const mainContent = document.querySelector('.rcss-main-content');
+    if (mainContent) {
+      mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }, []);
 
   return (
