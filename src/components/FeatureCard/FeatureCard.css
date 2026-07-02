@@ -91,10 +91,5 @@
 }
 
 /* Dark mode */
-[data-theme="dark"] .rcss-feature-card__title {
-  color: #F4F6F9;
-}
 
-[data-theme="dark"] .rcss-feature-card:hover .rcss-feature-card__title {
-  color: var(--color-accent);
-}
+

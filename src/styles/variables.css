@@ -82,18 +82,3 @@
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* --- Dark Theme Overrides --- */
-[data-theme="dark"] {
-  --color-bg-light: #0B1523;
-  --color-surface-light: #121D2C;
-  --color-border-light: #223247;
-  --color-text-dark: #F4F6F9;
-  --color-text-muted: #94A3B8;
-  /* DO NOT override --color-primary here — it's used for button text on gold buttons.
-     Sections that need a dark background already use explicit dark colors. */
-  --color-primary-light: #2A3B52;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.6);
-}

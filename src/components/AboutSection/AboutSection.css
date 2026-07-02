@@ -94,7 +94,7 @@
   font-family: var(--font-family-headings);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text-muted);
+
   cursor: pointer;
   transition: color var(--transition-fast), border-color var(--transition-fast);
   margin-bottom: -2px; /* aligns active borders over separator */
@@ -169,57 +169,13 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   font-style: normal;
-  color: var(--color-text-muted);
+
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 /* Dark mode adjustments */
-[data-theme="dark"] .rcss-about-section {
-  background-color: var(--color-bg-dark);
-}
 
-[data-theme="dark"] .rcss-about__image-container {
-  border-color: var(--color-border-dark);
-}
-
-[data-theme="dark"] .rcss-about__tabs {
-  border-bottom-color: var(--color-border-dark);
-}
-
-[data-theme="dark"] .rcss-about__tab-btn {
-  color: #C7D2E3;
-}
-
-[data-theme="dark"] .rcss-about__tab-btn:hover {
-  color: var(--color-accent-hover);
-}
-
-[data-theme="dark"] .rcss-about__tab-btn--active {
-  color: var(--color-accent-hover);
-}
-
-[data-theme="dark"] .rcss-about__tab-icon-wrapper {
-  background-color: var(--color-surface-dark);
-  border-color: var(--color-border-dark);
-}
-
-[data-theme="dark"] .rcss-about__tab-text {
-  color: var(--color-text-light);
-}
-
-[data-theme="dark"] .rcss-about__ceo-quote {
-  background-color: var(--color-surface-dark);
-  border-left-color: var(--color-accent);
-}
-
-[data-theme="dark"] .rcss-about__quote-text {
-  color: var(--color-text-white);
-}
-
-[data-theme="dark"] .rcss-about__quote-author {
-  color: var(--color-text-muted);
-}
 
 /* Responsive grid collapsing */
 @media (max-width: 992px) {
@@ -250,3 +206,6 @@
     justify-content: space-around;
   }
 }
+
+
+
