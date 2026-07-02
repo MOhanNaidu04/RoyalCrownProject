@@ -325,7 +325,7 @@
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
   }
-  
+
   .rcss-contact-form {
     padding: var(--space-xl);
     max-width: none;
@@ -380,6 +380,10 @@
   .rcss-contact-section-wrapper {
     padding-top: var(--space-xl);
     padding-bottom: var(--space-xl);
+  }
+
+  .rcss-contact-map-placeholder {
+    height: 250px;
   }
 
   .rcss-form-row {

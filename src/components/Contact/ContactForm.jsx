@@ -58,7 +58,7 @@ export function ContactForm() {
   if (isSubmitted) {
     return (
       <div className="rcss-contact-success" role="status" aria-live="polite">
-        <div className="rcss-contact-success__icon" aria-hidden="true">✓</div>
+        <div className="rcss-contact-success__icon" aria-hidden="true">âœ“</div>
         <h3 className="rcss-contact-success__title">Message Transmitted</h3>
         <p className="rcss-contact-success__desc">
           Thank you. Your inquiry has been logged in our dispatch desk. An advisor will contact you within 2 business hours.
