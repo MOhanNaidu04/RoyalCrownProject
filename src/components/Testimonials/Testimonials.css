@@ -9,16 +9,18 @@
   position: relative;
   padding: 0;
   margin-top: var(--space-2xl);
+  perspective: 2200px;
 }
 
 .rcss-testimonials-swiper {
   overflow: visible !important;
-  padding: 0 !important;
+  padding: 0 2rem 2rem !important;
 }
 
 .rcss-testimonials__slide {
   height: auto;
   display: flex;
+  width: auto !important;
 }
 
 /* Testimonial Card */
@@ -36,15 +38,38 @@
     border-color var(--transition-normal);
   transform-origin: center center;
   will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .rcss-testimonials__slide:hover {
   z-index: 2;
 }
 
+.rcss-testimonials__slide {
+  margin-left: -86px;
+  z-index: 1;
+}
+
+.rcss-testimonials__slide:first-child {
+  margin-left: 0;
+}
+
+.rcss-testimonials__slide:nth-child(1) .rcss-testimonial-card {
+  transform: translateY(10px) rotateY(14deg) scale(0.94);
+}
+
+.rcss-testimonials__slide:nth-child(2) .rcss-testimonial-card {
+  transform: translateY(2px) rotateY(10deg) scale(0.975);
+}
+
+.rcss-testimonials__slide:nth-child(3) .rcss-testimonial-card {
+  transform: translateY(10px) rotateY(6deg) scale(0.94);
+}
+
 .rcss-testimonials__slide:hover .rcss-testimonial-card {
-  transform: translateY(-10px) scale(1.015);
-  box-shadow: 0 24px 48px rgba(7, 17, 28, 0.14);
+  transform: translateY(-18px) rotateY(0deg) scale(1.04);
+  box-shadow: 0 28px 58px rgba(7, 17, 28, 0.18);
   border-color: var(--color-accent);
 }
 
@@ -182,7 +207,7 @@
 }
 
 [data-theme="dark"] .rcss-testimonial-card:hover {
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 28px 58px rgba(0, 0, 0, 0.34);
 }
 
 /* Responsive arrow hiding */
@@ -193,6 +218,20 @@
 }
 
 @media (max-width: 768px) {
+  .rcss-testimonials-swiper {
+    padding: 0 !important;
+  }
+
+  .rcss-testimonials__slide {
+    margin-left: 0;
+  }
+
+  .rcss-testimonials__slide:nth-child(1) .rcss-testimonial-card,
+  .rcss-testimonials__slide:nth-child(2) .rcss-testimonial-card,
+  .rcss-testimonials__slide:nth-child(3) .rcss-testimonial-card {
+    transform: none;
+  }
+
   .rcss-testimonial-card {
     padding: var(--space-lg) !important;
   }
