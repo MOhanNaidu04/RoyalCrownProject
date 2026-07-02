@@ -18,7 +18,7 @@ export function Contact() {
           align="center"
         />
 
-        <div className="rcss-contact-grid-wrapper">
+        <div className="rcss-contact-layout">
           <ContactInfo />
           <ContactForm />
         </div>

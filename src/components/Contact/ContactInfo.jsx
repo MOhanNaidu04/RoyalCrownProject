@@ -2,14 +2,14 @@ import React from 'react';
 import { Icon } from '@/components';
 
 /**
- * Renders structured contact details and mock map interfaces
+ * Contact information column with embedded map
  */
 export function ContactInfo() {
   const infoItems = [
     {
       icon: 'location',
       title: 'Our Address',
-      content: 'Flat No. 304, M.S Estates Building, Balaji Nagar, Nizampet, Bachupally, Hyderabad – 500090'
+      content: 'Flat No. 304, M.S Estates Building, Balaji Nagar, Nizampet, Bachupally, Hyderabad - 500090'
     },
     {
       icon: 'phone',
@@ -24,13 +24,12 @@ export function ContactInfo() {
     {
       icon: 'crown',
       title: 'Operational Hours',
-      content: 'Administrative Desk: Mon – Sat (9:00 AM – 6:00 PM) | Security Teams: 24/7 Active'
+      content: 'Administrative Desk: Mon - Sat (9:00 AM - 6:00 PM) | Security Teams: 24/7 Active'
     }
   ];
 
   return (
     <div className="rcss-contact-info">
-      {/* Information Cards List */}
       <div className="rcss-contact-info__list">
         {infoItems.map((item, idx) => (
           <div key={idx} className="rcss-contact-info__card">
@@ -45,19 +44,17 @@ export function ContactInfo() {
         ))}
       </div>
 
-      {/* Styled Google Map Placeholder */}
-      <div className="rcss-contact-map-placeholder">
-        <div className="rcss-contact-map-placeholder__overlay">
-          <Icon name="location" size={32} className="rcss-text-gold rcss-map-pin" />
-          <h4 className="rcss-contact-map-placeholder__title">Balaji Nagar, Nizampet</h4>
-          <span className="rcss-contact-map-placeholder__subtitle">Bachupally, Hyderabad – 500090</span>
-          <button
-            type="button"
-            className="rcss-contact-map-placeholder__btn"
-            onClick={() => window.open('https://maps.google.com/?q=Balaji+Nagar+Nizampet+Bachupally+Hyderabad', '_blank')}
-          >
-            Open in Google Maps
-          </button>
+      <div className="rcss-contact-map">
+        <iframe
+          title="Royal Crown Security Services location map"
+          className="rcss-contact-map__iframe"
+          src="https://www.google.com/maps?q=Balaji%20Nagar%2C%20Nizampet%2C%20Bachupally%2C%20Hyderabad%20500090&z=14&output=embed"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+        <div className="rcss-contact-map__badge">
+          <Icon name="location" size={16} className="rcss-text-gold" />
+          <span>Balaji Nagar, Nizampet</span>
         </div>
       </div>
     </div>
