@@ -214,27 +214,6 @@
   margin-left: auto;
 }
 
-.rcss-navbar__theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(6, 16, 30, 0.05);
-  color: #06101E;
-  border: 1px solid rgba(6, 16, 30, 0.1);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.rcss-navbar__theme-toggle:hover {
-  background: rgba(6, 16, 30, 0.1);
-  transform: scale(1.05);
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-
 .rcss-navbar__hamburger {
   display: none;
   flex-direction: column;

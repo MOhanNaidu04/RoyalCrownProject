@@ -37,12 +37,6 @@ export const Navbar = memo(function Navbar() {
   const [isScrolled,      setIsScrolled]       = useState(false);
   const [mobileMenuOpen,  setMobileMenuOpen]   = useState(false);
   const [dropdownOpen,    setDropdownOpen]     = useState(false);
-  const [isDarkMode,      setIsDarkMode]       = useState(() => {
-    // Check local storage or system preference on initial load
-    const saved = localStorage.getItem('rcss-theme');
-    if (saved) return saved === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
   const location = useLocation();
 
   // useMemo: derived booleans — recalculate only when location/scroll changes
@@ -68,19 +62,6 @@ export const Navbar = memo(function Navbar() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage, handleScroll]);
-
-  // Handle theme changes
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('rcss-theme', 'dark');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('rcss-theme', 'light');
-    }
-  }, [isDarkMode]);
-
-  const toggleTheme = useCallback(() => setIsDarkMode(prev => !prev), []);
 
   // Collapse on route changes
   useEffect(() => {
@@ -159,15 +140,6 @@ export const Navbar = memo(function Navbar() {
 
         {/* Right Actions */}
         <div className="rcss-navbar__actions">
-          <button
-            type="button"
-            className="rcss-navbar__theme-toggle"
-            onClick={toggleTheme}
-            aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            <Icon name={isDarkMode ? 'sun' : 'moon'} size={20} />
-          </button>
-
           <Link to="/contact" className="rcss-navbar__cta-btn" aria-label="Request a security quote">
             <Button variant={isSolid ? 'primary' : 'secondary'} size="sm">
               Secure Quote
