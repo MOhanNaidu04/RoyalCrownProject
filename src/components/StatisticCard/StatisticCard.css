@@ -60,6 +60,17 @@
   letter-spacing: 0.05em;
 }
 
+[data-theme="dark"] .rcss-stat-card {
+  background-color: var(--color-surface-dark) !important;
+  border-color: var(--color-border-dark) !important;
+  color: var(--color-text-light);
+}
 
+[data-theme="dark"] .rcss-stat-card__icon-wrapper {
+  background-color: var(--color-bg-dark);
+  border-color: var(--color-border-dark);
+}
 
-
+[data-theme="dark"] .rcss-stat-card__label {
+  color: #cbd5e1;
+}

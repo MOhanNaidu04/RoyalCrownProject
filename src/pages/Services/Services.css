@@ -97,6 +97,10 @@
   margin: 0;
 }
 
+[data-theme="dark"] .rcss-service-detail__desc {
+  color: #94a3b8;
+}
+
 .rcss-service-detail__facts,
 .rcss-service-detail__grid,
 .rcss-service-detail__related-grid {
@@ -212,6 +216,9 @@
   color: #1e293b;
 }
 
+[data-theme="dark"] .rcss-service-detail__feature-item {
+  color: #ccd6f6;
+}
 
 .rcss-service-detail__check {
   color: #10b981;
@@ -266,7 +273,30 @@
 }
 
 /* Dark mode */
+[data-theme="dark"] .rcss-service-detail {
+  background-color: #121d2c;
+  border-color: #223247;
+}
 
+[data-theme="dark"] .rcss-service-detail__fact,
+[data-theme="dark"] .rcss-service-detail__panel,
+[data-theme="dark"] .rcss-service-detail__related-card {
+  background: rgba(11, 23, 37, 0.88);
+  border-color: rgba(92, 110, 133, 0.22);
+}
+
+[data-theme="dark"] .rcss-service-detail__panel-title,
+[data-theme="dark"] .rcss-service-detail__related-title,
+[data-theme="dark"] .rcss-service-detail__fact-value,
+[data-theme="dark"] .rcss-service-detail__related-card strong {
+  color: #f4f6f9;
+}
+
+[data-theme="dark"] .rcss-service-detail__list,
+[data-theme="dark"] .rcss-service-detail__steps,
+[data-theme="dark"] .rcss-service-detail__related-card span:last-child {
+  color: #b6c2d1;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -337,5 +367,3 @@
     transform: scale(1);
   }
 }
-
-

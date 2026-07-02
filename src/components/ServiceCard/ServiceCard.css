@@ -34,4 +34,6 @@
 }
 
 /* Dark mode */
-
+[data-theme="dark"] .rcss-service-card__title {
+  color: #F4F6F9;
+}

@@ -73,6 +73,10 @@
   margin: 0;
 }
 
+[data-theme="dark"] .rcss-accordion-item {
+  border-color: rgba(148, 163, 184, 0.16);
+}
 
-
-
+[data-theme="dark"] .rcss-accordion-item__content {
+  color: var(--color-text-light);
+}

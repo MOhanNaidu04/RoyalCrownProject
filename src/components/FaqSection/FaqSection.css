@@ -32,7 +32,18 @@
   border-top: 1px solid rgba(148, 163, 184, 0.24);
 }
 
+[data-theme="dark"] .rcss-faq-section__title {
+  color: #F4F6F9;
+}
 
+[data-theme="dark"] .rcss-faq-section__subtitle {
+  color: #CBD5E1;
+}
 
+[data-theme="dark"] .rcss-accordion-item__trigger {
+  color: #F4F6F9;
+}
 
-
+[data-theme="dark"] .rcss-accordion-item__content {
+  color: #CBD5E1;
+}

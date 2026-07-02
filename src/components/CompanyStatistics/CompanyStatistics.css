@@ -20,8 +20,19 @@
   color: var(--color-text-muted);
 }
 
+[data-theme="dark"] .rcss-stats-section {
+  background:
+    radial-gradient(circle at top, rgba(201, 20, 20, 0.1), transparent 34%),
+    linear-gradient(180deg, #0b1523 0%, #101c2d 100%);
+}
 
+[data-theme="dark"] .rcss-stats-section .rcss-section-heading__title {
+  color: #f4f6f9;
+}
 
+[data-theme="dark"] .rcss-stats-section .rcss-section-heading__subtitle {
+  color: #cbd5e1;
+}
 
 /* Tablets — 2-column grid */
 @media (max-width: 768px) {
@@ -37,4 +48,3 @@
     gap: var(--space-md);
   }
 }
-
