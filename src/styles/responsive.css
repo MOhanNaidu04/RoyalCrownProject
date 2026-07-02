@@ -1,26 +1,10 @@
 /* --- Media Breakpoints overrides for 1920px, 1440px, 1200px, 992px, 768px, 576px, 390px --- */
 
-/* Desktop viewport-fit mode: keep the app on one screen and scroll inside the content area */
+/* Desktop layout spacing and container sizing */
 @media (min-width: 993px) {
   .rcss-page {
     padding-top: var(--space-xl);
     padding-bottom: var(--space-xl);
-  }
-
-  .rcss-home-page,
-  .rcss-about-page,
-  .rcss-services-page,
-  .rcss-contact-page,
-  .rcss-gallery-page {
-    min-height: 100%;
-  }
-
-  .rcss-home-page > *,
-  .rcss-about-page > *,
-  .rcss-services-page > *,
-  .rcss-contact-page > *,
-  .rcss-gallery-page > * {
-    max-width: 100%;
   }
 
   .rcss-section-heading {

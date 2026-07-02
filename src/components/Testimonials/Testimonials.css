@@ -1,8 +1,7 @@
 /* Testimonials section styling */
 .rcss-testimonials-section {
   padding: var(--space-2xl) 0;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
+  overflow: visible;
   background-color: var(--color-white);
 }
 
@@ -157,11 +156,6 @@
 
 /* Responsive arrow hiding */
 @media (max-width: 992px) {
-  .rcss-testimonials-section {
-    max-height: none;
-    overflow-y: visible;
-  }
-
   .rcss-swiper-arrow {
     display: none; /* Hide arrows on tablets and mobile screens to avoid edge overflows */
   }

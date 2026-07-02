@@ -1,8 +1,7 @@
 /* Services showcase section styles */
 .rcss-services-showcase {
   padding: var(--space-2xl) 0;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
+  overflow: visible;
   background-color: var(--color-bg-light);
 }
 
@@ -42,17 +41,21 @@
 }
 
 .rcss-services__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
   margin-top: var(--space-2xl);
   gap: var(--space-lg);
 }
 
+.rcss-services__grid > * {
+  flex: 1 1 280px;
+  max-width: 100%;
+}
+
 /* Tablets — 2-column grid */
 @media (max-width: 768px) {
-  .rcss-services-showcase {
-    max-height: none;
-    overflow-y: visible;
-  }
-
   .rcss-services__filters {
     gap: var(--space-2xs);
   }

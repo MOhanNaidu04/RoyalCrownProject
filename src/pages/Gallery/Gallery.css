@@ -1,4 +1,4 @@
 /* Gallery page layout skeleton */
 .rcss-gallery-page {
-  padding: var(--space-2xl) 0;
+  padding: calc(var(--space-2xl) + 4.5rem) 0 var(--space-2xl);
 }

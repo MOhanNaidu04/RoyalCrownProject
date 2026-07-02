@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar, Footer, ScrollProgress } from '@/components';
 import './MainLayout.css';
@@ -8,16 +8,11 @@ import './MainLayout.css';
  */
 export function MainLayout() {
   const location = useLocation();
-  const mainRef = useRef(null);
 
-  useEffect(() => {
-    const scrollRoot = mainRef.current;
-
+  useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-
-    if (scrollRoot) {
-      scrollRoot.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    }
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, [location.pathname]);
 
   return (
@@ -29,7 +24,7 @@ export function MainLayout() {
       <Navbar />
 
       {/* Dynamic route contents */}
-      <main className="rcss-main-content" ref={mainRef}>
+      <main className="rcss-main-content">
         <Outlet />
       </main>
 
