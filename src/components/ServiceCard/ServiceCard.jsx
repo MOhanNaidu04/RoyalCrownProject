@@ -13,6 +13,7 @@ export const ServiceCard = memo(function ServiceCard({
   ctaText = 'Request Details',
   onCtaClick,
   className = '',
+  ctaButtonProps = {},
   ...props
 }) {
   return (
@@ -34,6 +35,7 @@ export const ServiceCard = memo(function ServiceCard({
               onClick={onCtaClick}
               aria-label={`Read more about ${title}`}
               style={{ width: '100%', marginTop: '1rem' }}
+              {...ctaButtonProps}
             >
               {ctaText}
             </Button>

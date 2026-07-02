@@ -65,7 +65,7 @@ export const Testimonials = memo(function Testimonials() {
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
-            spaceBetween={30}
+            spaceBetween={0}
             slidesPerView={1}
             autoplay={{
               delay: 4000,
@@ -91,8 +91,8 @@ export const Testimonials = memo(function Testimonials() {
             className="rcss-testimonials-swiper"
           >
             {REVIEWS_DATA.map((item) => (
-              <SwiperSlide key={item.id}>
-                <Card hoverEffect="lift" className="rcss-testimonial-card">
+              <SwiperSlide key={item.id} className="rcss-testimonials__slide">
+                <Card hoverEffect="scale" className="rcss-testimonial-card">
                   {/* Decorative Quotation Mark */}
                   <span className="rcss-testimonial-card__quote-mark">“</span>
 

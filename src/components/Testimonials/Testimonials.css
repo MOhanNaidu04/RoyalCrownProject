@@ -7,12 +7,18 @@
 
 .rcss-testimonials__slider-wrapper {
   position: relative;
-  padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
+  padding: 0;
   margin-top: var(--space-2xl);
 }
 
 .rcss-testimonials-swiper {
-  padding: var(--space-xs) var(--space-2xs) var(--space-lg) var(--space-2xs) !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+.rcss-testimonials__slide {
+  height: auto;
+  display: flex;
 }
 
 /* Testimonial Card */
@@ -24,6 +30,22 @@
   padding: var(--space-xl) !important;
   overflow: hidden;
   border-top: none !important;
+  transition:
+    transform var(--transition-normal) cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.rcss-testimonials__slide:hover {
+  z-index: 2;
+}
+
+.rcss-testimonials__slide:hover .rcss-testimonial-card {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 24px 48px rgba(7, 17, 28, 0.14);
+  border-color: var(--color-accent);
 }
 
 .rcss-testimonial-card:hover {
@@ -154,13 +176,24 @@
   width: 24px !important;
 }
 
+/* Dark mode */
+[data-theme="dark"] .rcss-testimonials-section {
+  background-color: var(--color-bg-dark);
+}
+
+[data-theme="dark"] .rcss-testimonial-card:hover {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+}
+
 /* Responsive arrow hiding */
 @media (max-width: 992px) {
   .rcss-swiper-arrow {
     display: none; /* Hide arrows on tablets and mobile screens to avoid edge overflows */
   }
-  
-  .rcss-testimonials__slider-wrapper {
-    padding: 0 0 var(--space-xl) 0;
+}
+
+@media (max-width: 768px) {
+  .rcss-testimonial-card {
+    padding: var(--space-lg) !important;
   }
 }
