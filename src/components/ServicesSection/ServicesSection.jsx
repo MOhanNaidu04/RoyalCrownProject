@@ -1,10 +1,14 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Container, SectionHeading, ServiceCard } from '@/components';
 import { SERVICES_DETAIL } from '@/pages/Services/serviceData';
 import './ServicesSection.css';
 
 const ROLLING_SERVICES = [...SERVICES_DETAIL, ...SERVICES_DETAIL];
+
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * ServicesSection showcases the full service lineup as a seamless horizontal marquee.
@@ -12,23 +16,63 @@ const ROLLING_SERVICES = [...SERVICES_DETAIL, ...SERVICES_DETAIL];
  */
 export function ServicesSection() {
   const navigate = useNavigate();
+  const sectionRef = useRef(null);
+  const marqueeRef = useRef(null);
+  const trackRef = useRef(null);
 
   const handleReadMore = useCallback((serviceSlug) => {
     navigate(`/services/${serviceSlug}`);
   }, [navigate]);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    const marquee = marqueeRef.current;
+    const track = trackRef.current;
+
+    if (!section || !marquee || !track) return undefined;
+
+    const ctx = gsap.context(() => {
+      const getTravel = () => Math.max(0, track.scrollWidth - marquee.clientWidth);
+
+      const tween = gsap.fromTo(
+        track,
+        { x: 0 },
+        {
+          x: () => -getTravel(),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 88px',
+            end: () => `+=${getTravel()}`,
+            scrub: 0.85,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true
+          }
+        }
+      );
+
+      return () => {
+        tween.scrollTrigger?.kill();
+        tween.kill();
+      };
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="rcss-services-showcase">
+    <section ref={sectionRef} className="rcss-services-showcase">
       <Container>
         <SectionHeading
           title="Integrated Facility & Protection Solutions"
-          subtitle="Explore our complete portfolio of security, patrol, and facility support services as they glide across the page."
-          badgeText="Our Portfolio"
+          subtitle="Scroll to explore our complete range of security, patrol, and facility support services as they glide across the page."
+          badgeText="Our Services"
           align="center"
         />
 
-        <div className="rcss-services-marquee" aria-label="Services portfolio marquee">
-          <div className="rcss-services-marquee__track">
+        <div ref={marqueeRef} className="rcss-services-marquee" aria-label="Services rolling showcase">
+          <div ref={trackRef} className="rcss-services-marquee__track">
             {ROLLING_SERVICES.map((service, index) => {
               const isDuplicate = index >= SERVICES_DETAIL.length;
 

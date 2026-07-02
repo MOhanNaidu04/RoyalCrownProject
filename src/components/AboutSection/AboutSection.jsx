@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Container, Icon } from '@/components';
+import { Container, SectionHeading, Icon } from '@/components';
 import operationsImg from '@/assets/images/operations_center.png';
 import './AboutSection.css';
 
@@ -65,10 +65,6 @@ export const AboutSection = memo(function AboutSection() {
   return (
     <section className="rcss-about-section">
       <Container>
-        <div className="rcss-about__header">
-          <span className="rcss-about__eyebrow">Company Profile</span>
-        </div>
-
         <div className="rcss-about-grid">
           {/* Left Visual Column */}
           <div className="rcss-about__visual-side">
@@ -90,9 +86,11 @@ export const AboutSection = memo(function AboutSection() {
 
           {/* Right Narrative Column */}
           <div className="rcss-about__content-side">
-            <p className="rcss-about__intro">
-              Royal Crown Security Services provides comprehensive security solutions including personal security, surveillance systems, and guard services.
-            </p>
+            <SectionHeading
+              title="Company Profile"
+              subtitle="Royal Crown Security Services provides comprehensive security solutions including personal security, surveillance systems, and guard services."
+              align="left"
+            />
 
             {/* Interactive Tabs Menu */}
             <div className="rcss-about__tabs">
