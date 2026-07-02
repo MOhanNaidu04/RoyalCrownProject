@@ -1,6 +1,6 @@
 .rcss-hero-section {
   position: relative;
-  min-height: 82vh;
+  min-height: calc(100svh - clamp(72px, 7vw, 92px));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -9,7 +9,8 @@
     linear-gradient(112deg, rgba(3, 9, 19, 0.96) 0%, rgba(6, 16, 30, 0.86) 46%, rgba(21, 33, 40, 0.76) 100%),
     url('@/assets/images/operations_center.png') center / cover no-repeat;
   color: var(--color-white);
-  padding: 2.5rem 0 1.75rem;
+  padding: clamp(5rem, 7vw, 6.75rem) 0 clamp(2.5rem, 4vw, 3.5rem);
+  box-sizing: border-box;
   border-top: none !important;
   border-bottom: none !important;
   outline: none !important;
@@ -445,7 +446,7 @@
 
 @media (max-width: 768px) {
   .rcss-hero-section {
-    padding: 5.25rem 0 2.5rem;
+    padding: 5.75rem 0 3rem;
   }
 
   .rcss-hero__statistics {
@@ -484,7 +485,7 @@
   }
 
   .rcss-hero-section {
-    padding: 5rem 0 2.25rem;
+    padding: 5.5rem 0 2.75rem;
   }
 }
 
