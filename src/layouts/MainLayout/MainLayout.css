@@ -9,7 +9,7 @@
 .rcss-main-content {
   flex: 1;
   min-width: 0;
-  background-color: var(--color-background, #F8FAFC);
+  background-color: var(--color-white);
 }
 
 /* Footer */

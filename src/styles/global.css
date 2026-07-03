@@ -23,7 +23,7 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  background-color: var(--color-bg-light);
+  background-color: var(--color-white);
   color: var(--color-text-dark);
   overflow-x: hidden;
 }

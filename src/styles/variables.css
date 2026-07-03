@@ -8,7 +8,7 @@
   
   /* --- Neutral Grays --- */
   --color-white: #FFFFFF;
-  --color-bg-light: #F4F6F9;        /* Soft ice gray background */
+  --color-bg-light: #FFFFFF;        /* Default page background */
   --color-bg-dark: #0B1523;         /* Deep background charcoal */
   --color-surface-light: #FFFFFF;
   --color-surface-dark: #121D2C;

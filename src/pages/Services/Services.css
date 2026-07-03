@@ -2,9 +2,7 @@
 .rcss-services-page {
   padding: var(--space-2xl) 0;
   padding-top: 4.5rem;
-  background:
-    radial-gradient(circle at top, rgba(201, 20, 20, 0.12), transparent 36%),
-    linear-gradient(180deg, var(--color-bg-light) 0%, #f6f8fb 100%);
+  background: var(--color-white);
 }
 
 /* Service Detail List */
