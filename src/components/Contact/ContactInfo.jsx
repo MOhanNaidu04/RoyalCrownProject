@@ -7,15 +7,21 @@ import { Icon } from '@/components';
 export function ContactInfo() {
   return (
     <div className="rcss-contact-info">
-      <div className="rcss-contact-info__summary">
-        {/* <h3 className="rcss-contact-info__summary-title"></h3> */}
-        <p className="rcss-contact-info__summary-text">
-          {/* Royal Crown Security Services provides comprehensive security solutions including personal security, */}
-          {/* surveillance systems, and guard services. */}
-        </p>
-      </div>
-
       <div className="rcss-contact-info__details">
+        <div className="rcss-contact-info__detail-card">
+          <div className="rcss-contact-info__icon-circle" aria-hidden="true">
+            <Icon name="location" size={22} className="rcss-contact-info__icon" />
+          </div>
+          <div>
+            <h4 className="rcss-contact-info__detail-title">Address</h4>
+            <address className="rcss-contact-info__detail-text" style={{fontStyle: 'normal'}}>
+              Flat No. 304, M.S Estates Building,
+              <br />Balaji Nagar, Nizampet,
+              <br />Bachupally, Hyderabad- 500090
+            </address>
+          </div>
+        </div>
+
         <div className="rcss-contact-info__detail-card">
           <div className="rcss-contact-info__icon-circle" aria-hidden="true">
             <Icon name="phone" size={22} className="rcss-contact-info__icon" />
@@ -28,7 +34,7 @@ export function ContactInfo() {
 
         <div className="rcss-contact-info__detail-card">
           <div className="rcss-contact-info__icon-circle" aria-hidden="true">
-            <Icon name="mail" size={22} className="rcss-contact-info__icon" />
+            <Icon name="envelope" size={22} className="rcss-contact-info__icon" />
           </div>
           <div>
             <h4 className="rcss-contact-info__detail-title">Email</h4>
