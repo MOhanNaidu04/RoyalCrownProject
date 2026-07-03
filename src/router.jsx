@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { MainLayout } from '@/layouts';
+import Contact from '@/pages/Contact/Contact';
 
 // --- Page-level Lazy Imports for Code Splitting ---
 // Each route chunk is only fetched when the user navigates to that page
@@ -9,7 +10,6 @@ const About   = lazy(() => import('@/pages/About/About'));
 const Services = lazy(() => import('@/pages/Services/Services'));
 const ServiceDetail = lazy(() => import('@/pages/Services/ServiceDetail'));
 const Gallery = lazy(() => import('@/pages/Gallery/Gallery'));
-const Contact = lazy(() => import('@/pages/Contact/Contact'));
 const TestimonialsPage = lazy(() => import('@/pages/Testimonials/Testimonials'));
 
 /**

@@ -1,0 +1,1 @@
+import{j as t}from"./vendor-framer-ChTvfRDv.js";import"./vendor-react-0G06IxQq.js";import{A as o}from"./index-0UpigBC6.js";import"./vendor-gsap-SFc2wnMY.js";import"./vendor-swiper-CLjMzi4o.js";function m(){return t.jsx("div",{className:"rcss-page rcss-about-page",children:t.jsx(o,{})})}export{m as About,m as default};
