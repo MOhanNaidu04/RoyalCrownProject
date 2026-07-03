@@ -1,7 +1,8 @@
 import React, { memo, useRef } from 'react';
+import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { Container, SectionHeading, Card, Icon } from '@/components';
+import { Container, SectionHeading, Icon } from '@/components';
 
 // Swiper styles
 import 'swiper/css';
@@ -41,6 +42,73 @@ const REVIEWS_DATA = [
     avatar: clientMale
   }
 ];
+
+const ROTATION_RANGE = 22;
+const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
+
+function TiltTestimonialCard({ item }) {
+  const ref = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const xSpring = useSpring(x, { stiffness: 180, damping: 18 });
+  const ySpring = useSpring(y, { stiffness: 180, damping: 18 });
+  const transform = useMotionTemplate`perspective(1100px) rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
+  const handleMouseMove = (e) => {
+    if (!ref.current) return;
+
+    const rect = ref.current.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const rotateX = ((mouseY / rect.height) * ROTATION_RANGE - HALF_ROTATION_RANGE) * -1;
+    const rotateY = (mouseX / rect.width) * ROTATION_RANGE - HALF_ROTATION_RANGE;
+
+    x.set(rotateX);
+    y.set(rotateY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      className="rcss-testimonial-card"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ transformStyle: 'preserve-3d', transform }}
+    >
+      <div className="rcss-testimonial-card__surface">
+        <span className="rcss-testimonial-card__quote-mark">“</span>
+        <div className="rcss-testimonial-card__stars">
+          {[...Array(item.rating)].map((_, i) => (
+            <Icon key={i} name="crown" size={16} className="rcss-text-gold" />
+          ))}
+        </div>
+        <p className="rcss-testimonial-card__review">"{item.review}"</p>
+        <div className="rcss-testimonial-card__client">
+          <img
+            src={item.avatar}
+            alt={`${item.name}, ${item.designation} at ${item.company}`}
+            className="rcss-testimonial-card__avatar"
+            loading="lazy"
+            width="48"
+            height="48"
+          />
+          <div className="rcss-testimonial-card__info">
+            <h4 className="rcss-testimonial-card__name">{item.name}</h4>
+            <span className="rcss-testimonial-card__company">
+              {item.designation}, {item.company}
+            </span>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 /**
  * Testimonials slider — memoized since review data is static.
@@ -84,40 +152,7 @@ export const Testimonials = memo(function Testimonials() {
           >
             {REVIEWS_DATA.map((item) => (
               <SwiperSlide key={item.id} className="rcss-testimonials__slide">
-                <Card hoverEffect="none" className="rcss-testimonial-card">
-                  {/* Decorative Quotation Mark */}
-                  <span className="rcss-testimonial-card__quote-mark">“</span>
-
-                  {/* Star Ratings */}
-                  <div className="rcss-testimonial-card__stars">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Icon key={i} name="crown" size={16} className="rcss-text-gold" />
-                    ))}
-                  </div>
-
-                  {/* Review Paragraph */}
-                  <p className="rcss-testimonial-card__review">
-                    "{item.review}"
-                  </p>
-
-                  {/* Client Info Grid */}
-                  <div className="rcss-testimonial-card__client">
-                    <img
-                      src={item.avatar}
-                      alt={`${item.name}, ${item.designation} at ${item.company}`}
-                      className="rcss-testimonial-card__avatar"
-                      loading="lazy"
-                      width="48"
-                      height="48"
-                    />
-                    <div className="rcss-testimonial-card__info">
-                      <h4 className="rcss-testimonial-card__name">{item.name}</h4>
-                      <span className="rcss-testimonial-card__company">
-                        {item.designation}, {item.company}
-                      </span>
-                    </div>
-                  </div>
-                </Card>
+                <TiltTestimonialCard item={item} />
               </SwiperSlide>
             ))}
           </Swiper>
