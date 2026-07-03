@@ -43,8 +43,7 @@ export function FaqSection() {
     <section className="rcss-faq-section">
       <Container>
         <h2 className="rcss-faq-section__title">
-          <span className="rcss-faq-section__badge">FAQ</span>
-          {/* Frequently Asked Questions */}
+          <span className="rcss-faq-section__badge">faq</span>
         </h2>
         <p className="rcss-faq-section__subtitle">
           Find answers to common inquiries regarding guard deployment times, safety compliance,

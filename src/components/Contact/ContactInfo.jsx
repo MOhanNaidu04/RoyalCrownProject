@@ -28,7 +28,9 @@ export function ContactInfo() {
           </div>
           <div>
             <h4 className="rcss-contact-info__detail-title">Phone</h4>
-            <p className="rcss-contact-info__detail-text">+91 9573902632</p>
+            <p className="rcss-contact-info__detail-text">
+              <a href="tel:+919573902632" aria-label="Call Royal Crown Security Services" className="rcss-contact-link">+91 9573902632</a>
+            </p>
           </div>
         </div>
 
@@ -38,7 +40,9 @@ export function ContactInfo() {
           </div>
           <div>
             <h4 className="rcss-contact-info__detail-title">Email</h4>
-            <p className="rcss-contact-info__detail-text">royalcrownsecser@gmail.com</p>
+            <p className="rcss-contact-info__detail-text">
+              <a href="mailto:royalcrownsecser@gmail.com" aria-label="Email Royal Crown Security Services" className="rcss-contact-link">royalcrownsecser@gmail.com</a>
+            </p>
           </div>
         </div>
       </div>

@@ -24,6 +24,16 @@
   text-transform: uppercase;
 }
 
+.rcss-faq-section__badge::after {
+  content: '';
+  display: block;
+  margin: 0.6rem auto 0;
+  width: 64px;
+  height: 6px;
+  background: var(--color-accent);
+  border-radius: 6px;
+}
+
 .rcss-faq-section__subtitle {
   max-width: 560px;
   margin: 0.75rem auto 0;
