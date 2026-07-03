@@ -1,6 +1,6 @@
 /* Testimonials section styling */
 .rcss-testimonials-section {
-  padding: var(--space-xl) 0;
+  padding: var(--space-xl)0;
   overflow: visible;
   background-color: var(--color-white);
 }
