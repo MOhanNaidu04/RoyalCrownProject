@@ -117,14 +117,9 @@ export const AboutSection = memo(function AboutSection() {
                   transition={{ duration: 0.25 }}
                   className="rcss-about__tab-content"
                 >
-                  <div className="rcss-about__tab-content-flex">
-                    <div className="rcss-about__tab-icon-wrapper">
-                      <Icon name={tabContents[activeTab].icon} size={24} className="rcss-text-gold" />
-                    </div>
-                    <p className="rcss-about__tab-text">
-                      {tabContents[activeTab].text}
-                    </p>
-                  </div>
+                  <p className="rcss-about__tab-text">
+                    {tabContents[activeTab].text}
+                  </p>
                 </motion.div>
               </AnimatePresence>
             </div>

@@ -114,23 +114,6 @@
   margin-bottom: var(--space-md);
 }
 
-.rcss-about__tab-content-flex {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-}
-
-.rcss-about__tab-icon-wrapper {
-  background-color: var(--color-bg-light);
-  padding: var(--space-xs);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid var(--color-border-light);
-}
-
 .rcss-about__tab-text {
   font-family: var(--font-family-body);
   font-size: 0.9rem;
@@ -196,11 +179,6 @@
 
 [data-theme="dark"] .rcss-about__tab-btn--active {
   color: var(--color-accent-hover);
-}
-
-[data-theme="dark"] .rcss-about__tab-icon-wrapper {
-  background-color: var(--color-surface-dark);
-  border-color: var(--color-border-dark);
 }
 
 [data-theme="dark"] .rcss-about__tab-text {

@@ -2,46 +2,16 @@ import React from 'react';
 import { Icon } from '@/components';
 
 /**
- * Contact information column with embedded map
+ * Compact contact/profile column with a reduced map footprint.
  */
 export function ContactInfo() {
-  const infoItems = [
-    {
-      icon: 'location',
-      title: 'Our Address',
-      content: 'Flat No. 304, M.S Estates Building, Balaji Nagar, Nizampet, Bachupally, Hyderabad - 500090'
-    },
-    {
-      icon: 'phone',
-      title: 'Phone',
-      content: '+91 9573902632'
-    },
-    {
-      icon: 'check',
-      title: 'Email',
-      content: 'royalcrownsecser@gmail.com'
-    },
-    {
-      icon: 'crown',
-      title: 'Operational Hours',
-      content: 'Administrative Desk: Mon - Sat (9:00 AM - 6:00 PM) | Security Teams: 24/7 Active'
-    }
-  ];
-
   return (
     <div className="rcss-contact-info">
-      <div className="rcss-contact-info__list">
-        {infoItems.map((item, idx) => (
-          <div key={idx} className="rcss-contact-info__card">
-            <div className="rcss-contact-info__icon-wrapper">
-              <Icon name={item.icon} size={20} className="rcss-text-gold" />
-            </div>
-            <div className="rcss-contact-info__text">
-              <h4 className="rcss-contact-info__title">{item.title}</h4>
-              <p className="rcss-contact-info__content">{item.content}</p>
-            </div>
-          </div>
-        ))}
+      <div className="rcss-contact-info__summary">
+        <h3 className="rcss-contact-info__summary-title">Contact Center</h3>
+        <p className="rcss-contact-info__summary-text">
+          Establish active shielding, request risk assessment audits, or inquire about facilities staffing protocols today.
+        </p>
       </div>
 
       <div className="rcss-contact-map">

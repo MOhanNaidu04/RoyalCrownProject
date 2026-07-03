@@ -11,37 +11,38 @@
 
 .rcss-contact-layout {
   display: grid;
-  grid-template-columns: minmax(320px, 0.95fr) minmax(420px, 1.05fr);
-  gap: var(--space-3xl);
+  grid-template-columns: minmax(260px, 0.72fr) minmax(320px, 1.28fr);
+  gap: var(--space-lg);
   align-items: start;
 }
 
 .rcss-contact-info {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
-}
-
-.rcss-contact-info__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.rcss-contact-info__card {
-  display: flex;
-  align-items: center;
   gap: var(--space-md);
-  padding: calc(var(--space-md) - 2px);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg-light);
-  transition: border-color var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
 }
 
-.rcss-contact-info__card:hover {
-  border-color: var(--color-accent);
+.rcss-contact-info__summary {
+  padding: var(--space-md);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-light);
   box-shadow: var(--shadow-sm);
+}
+
+.rcss-contact-info__summary-title {
+  font-family: var(--font-family-headings);
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-xs);
+}
+
+.rcss-contact-info__summary-text {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
 }
 
 [data-theme="dark"] .rcss-contact-info__card {
@@ -49,55 +50,23 @@
   border-color: var(--color-border-dark);
 }
 
-[data-theme="dark"] .rcss-contact-info__title {
-  color: var(--color-text-white);
-}
-
-[data-theme="dark"] .rcss-contact-info__content {
-  color: var(--color-text-muted);
-}
-
-[data-theme="dark"] .rcss-contact-info__icon-wrapper {
-  background-color: var(--color-bg-dark);
+[data-theme="dark"] .rcss-contact-info__summary {
+  background-color: var(--color-surface-dark);
   border-color: var(--color-border-dark);
 }
 
-.rcss-contact-info__icon-wrapper {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border-light);
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+[data-theme="dark"] .rcss-contact-info__summary-title {
+  color: var(--color-text-white);
 }
 
-.rcss-contact-info__text {
-  display: flex;
-  flex-direction: column;
-}
-
-.rcss-contact-info__title {
-  font-family: var(--font-family-headings);
-  font-size: 0.76rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-  margin: 0 0 2px 0;
-}
-
-.rcss-contact-info__content {
-  font-size: 0.69rem;
+[data-theme="dark"] .rcss-contact-info__summary-text {
   color: var(--color-text-muted);
-  margin: 0;
-  line-height: var(--line-height-normal);
 }
 
 /* Embedded map */
 .rcss-contact-map {
   position: relative;
-  height: 340px;
+  height: 190px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border-light);
@@ -137,12 +106,12 @@
 .rcss-contact-form {
   background-color: var(--color-white);
   border: 1px solid var(--color-border-light);
-  padding: calc(var(--space-xl) + 0.5rem);
+  padding: var(--space-xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   width: 100%;
   max-width: 760px;
   justify-self: end;
@@ -156,18 +125,18 @@
 .rcss-form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 .rcss-form-group {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 0.35rem;
 }
 
 .rcss-form-label {
   font-family: var(--font-family-headings);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   text-transform: uppercase;
@@ -182,7 +151,7 @@
 .rcss-form-select,
 .rcss-form-textarea {
   width: 100%;
-  padding: var(--space-md);
+  padding: 0.8rem 0.9rem;
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
   font-family: var(--font-family-body);
@@ -293,11 +262,11 @@
 @media (max-width: 992px) {
   .rcss-contact-layout {
     grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-md);
   }
 
   .rcss-contact-form {
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     max-width: none;
     justify-self: stretch;
   }
@@ -310,10 +279,6 @@
 
   .rcss-contact-info__content {
     font-size: 0.64rem;
-  }
-
-  .rcss-contact-map {
-    height: 360px;
   }
 
   .rcss-contact-form {
@@ -344,12 +309,12 @@
 
 @media (max-width: 576px) {
   .rcss-contact-section-wrapper {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
   }
 
   .rcss-contact-map {
-    height: 280px;
+    height: 170px;
   }
 
   .rcss-form-row {
