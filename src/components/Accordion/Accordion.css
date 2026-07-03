@@ -7,7 +7,7 @@
 }
 
 .rcss-accordion-item {
-  border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+  border-bottom: 1px solid rgba(191, 211, 235, 0.95);
   overflow: hidden;
   transition: border-color var(--transition-fast) ease;
 }
@@ -16,14 +16,14 @@
   width: 100%;
   background: none;
   border: none;
-  padding: 1rem 3rem 1rem 0;
+  padding: 1.9rem 3.5rem 1.9rem 0;
   display: block;
   text-align: left;
   cursor: pointer;
   color: var(--color-primary);
   font-family: var(--font-family-headings);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-md);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
   transition: color var(--transition-fast) ease;
   position: relative;
 }
@@ -32,24 +32,29 @@
   color: var(--color-accent);
 }
 
+.rcss-accordion-item--open .rcss-accordion-item__trigger {
+  color: var(--color-accent);
+}
+
 .rcss-accordion-item__title {
   display: block;
-  padding-right: 1.25rem;
+  padding-right: 1.5rem;
+  line-height: 1.25;
 }
 
 .rcss-accordion-item__arrow-wrapper {
   position: absolute;
-  top: 1rem;
+  top: 1.85rem;
   right: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.85rem;
+  height: 1.85rem;
   display: grid;
   place-items: center;
 }
 
 .rcss-accordion-item__arrow {
   transition: transform 0.25s ease-in-out, color 0.25s ease-in-out;
-  color: var(--color-text-muted);
+  color: var(--color-primary);
   display: block;
 }
 
@@ -63,10 +68,11 @@
 }
 
 .rcss-accordion-item__content {
-  padding: 0 0 1rem 0;
+  padding: 0 0 1.9rem 0;
   color: var(--color-text-dark);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-relaxed);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 920px;
 }
 
 .rcss-accordion-item__content p {
