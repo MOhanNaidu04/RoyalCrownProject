@@ -138,12 +138,12 @@
 /* Custom Swiper Navigation Buttons */
 .rcss-swiper-arrow {
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
   background-color: var(--color-white);
   border: 1px solid var(--color-border-light);
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -165,21 +165,17 @@
 }
 
 .rcss-swiper-next {
-  right: -20px;
+  right: -16px;
 }
 
 .rcss-swiper-prev {
-  left: -20px;
+  left: -16px;
 }
 
-/* Visible modifier - arrows shown only when this class is applied (e.g. on hover) */
 .rcss-swiper-arrow--visible {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(-50%) scale(1);
-}
-.rcss-swiper-prev {
-  left: -20px;
 }
 
 /* Custom Swiper Bullet Pagination dots */
