@@ -16,6 +16,10 @@ export const Footer = memo(function Footer() {
     }
   }, []);
 
+  const handleHomeClick = useCallback(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <footer className="rcss-footer" role="contentinfo">
       <Container>
@@ -45,7 +49,7 @@ export const Footer = memo(function Footer() {
           <div className="rcss-footer-col">
             <h4 className="rcss-footer__col-title">Navigation</h4>
             <ul className="rcss-footer__links-list" aria-label="Site navigation links">
-              <li><Link to="/">Home Dashboard</Link></li>
+              <li><Link to="/" onClick={handleHomeClick}>Home Dashboard</Link></li>
               <li><Link to="/about">Our Agency</Link></li>
               <li><Link to="/services">Specialties</Link></li>
               <li><Link to="/gallery">Gallery Logs</Link></li>

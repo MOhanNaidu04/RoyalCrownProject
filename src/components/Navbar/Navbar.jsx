@@ -52,6 +52,11 @@ export const Navbar = memo(function Navbar() {
   const handleDropdownLeave = useCallback(() => setDropdownOpen(false), []);
   const toggleMobileMenu    = useCallback(() => setMobileMenuOpen(prev => !prev), []);
   const closeMobileMenu     = useCallback(() => setMobileMenuOpen(false), []);
+  const handleHomeClick     = useCallback(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    setMobileMenuOpen(false);
+    setDropdownOpen(false);
+  }, []);
 
   useEffect(() => {
     if (!isHomePage) {
@@ -77,7 +82,7 @@ export const Navbar = memo(function Navbar() {
     >
       <div className="rcss-navbar__container">
         {/* Brand Logo */}
-        <Link to="/" className="rcss-navbar__logo" aria-label="Royal Crown Security Services — Home">
+        <Link to="/" className="rcss-navbar__logo" aria-label="Royal Crown Security Services — Home" onClick={handleHomeClick}>
           <img
             src={logoImg}
             alt="Royal Crown Security Services"
@@ -130,7 +135,11 @@ export const Navbar = memo(function Navbar() {
                   </AnimatePresence>
                 </>
               ) : (
-                <Link to={link.path} className={`rcss-navbar__link ${location.pathname === link.path ? 'rcss-navbar__link--active' : ''}`}>
+                <Link
+                  to={link.path}
+                  className={`rcss-navbar__link ${location.pathname === link.path ? 'rcss-navbar__link--active' : ''}`}
+                  onClick={link.path === '/' ? handleHomeClick : undefined}
+                >
                   {link.label}
                 </Link>
               )}
@@ -226,7 +235,7 @@ export const Navbar = memo(function Navbar() {
                       <Link
                         to={link.path}
                         className={`rcss-navbar__mobile-link ${location.pathname === link.path ? 'rcss-navbar__mobile-link--active' : ''}`}
-                        onClick={closeMobileMenu}
+                        onClick={link.path === '/' ? handleHomeClick : closeMobileMenu}
                       >
                         {link.label}
                       </Link>
