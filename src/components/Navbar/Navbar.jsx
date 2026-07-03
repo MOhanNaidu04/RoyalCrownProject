@@ -19,6 +19,7 @@ const NAV_LINKS = [
     ]
   },
   { label: 'Gallery', path: '/gallery' },
+  { label: 'Testimonials', path: '/testimonials' },
   { label: 'Contact', path: '/contact' }
 ];
 

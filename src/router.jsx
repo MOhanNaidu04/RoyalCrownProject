@@ -10,6 +10,7 @@ const Services = lazy(() => import('@/pages/Services/Services'));
 const ServiceDetail = lazy(() => import('@/pages/Services/ServiceDetail'));
 const Gallery = lazy(() => import('@/pages/Gallery/Gallery'));
 const Contact = lazy(() => import('@/pages/Contact/Contact'));
+const TestimonialsPage = lazy(() => import('@/pages/Testimonials/Testimonials'));
 
 /**
  * Minimal route-level loading skeleton shown while page JS is fetching
@@ -74,6 +75,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageSkeleton />}>
             <Gallery />
+          </Suspense>
+        )
+      },
+      {
+        path: 'testimonials',
+        element: (
+          <Suspense fallback={<PageSkeleton />}>
+            <TestimonialsPage />
           </Suspense>
         )
       },
