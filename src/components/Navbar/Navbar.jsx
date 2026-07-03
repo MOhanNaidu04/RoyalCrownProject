@@ -5,7 +5,6 @@ import { Button, Icon } from '@/components';
 import logoImg from '@/assets/logos/ChatGPT Image Jul 1, 2026, 02_10_50 PM.png';
 import './Navbar.css';
 
-// Static data defined outside component — never recreated on render
 const NAV_LINKS = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
@@ -14,7 +13,7 @@ const NAV_LINKS = [
     path: '/services',
     dropdown: [
       { label: 'Tactical Guarding', path: '/services/guard-services' },
-      { label: 'Mobile Patrols',   path: '/services/mobile-patrols' },
+      { label: 'Mobile Patrols', path: '/services/mobile-patrols' },
       { label: 'Executive Escort', path: '/services/executive-escort' }
     ]
   },
@@ -24,37 +23,69 @@ const NAV_LINKS = [
 ];
 
 const MOBILE_VARIANTS = {
-  hidden:  { x: '100%' },
-  visible: { x: 0,     transition: { type: 'tween', ease: 'easeInOut', duration: 0.3 } },
-  exit:    { x: '100%', transition: { type: 'tween', ease: 'easeInOut', duration: 0.25 } }
+  hidden: { x: '100%' },
+  visible: { x: 0, transition: { type: 'tween', ease: 'easeInOut', duration: 0.3 } },
+  exit: { x: '100%', transition: { type: 'tween', ease: 'easeInOut', duration: 0.25 } }
 };
 
-/**
- * Premium responsive Navbar for Royal Crown Security Services.
- * useCallback stabilises all event handlers to prevent child re-renders.
- * memo wraps the entire Navbar so location-unrelated re-renders are blocked.
- */
+const DROPDOWN_WRAPPER_VARIANTS = {
+  open: {
+    scaleY: 1,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.1
+    }
+  },
+  closed: {
+    scaleY: 0,
+    transition: {
+      when: 'afterChildren',
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const DROPDOWN_CHEVRON_VARIANTS = {
+  open: { rotate: 180 },
+  closed: { rotate: 0 }
+};
+
+const DROPDOWN_ITEM_VARIANTS = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      when: 'beforeChildren'
+    }
+  },
+  closed: {
+    opacity: 0,
+    y: -15,
+    transition: {
+      when: 'afterChildren'
+    }
+  }
+};
+
 export const Navbar = memo(function Navbar() {
-  const [isScrolled,      setIsScrolled]       = useState(false);
-  const [mobileMenuOpen,  setMobileMenuOpen]   = useState(false);
-  const [dropdownOpen,    setDropdownOpen]     = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
   const servicesDropdownRef = useRef(null);
 
-  // useMemo: derived booleans — recalculate only when location/scroll changes
   const isHomePage = useMemo(() => location.pathname === '/', [location.pathname]);
-  const isSolid    = useMemo(() => !isHomePage || isScrolled, [isHomePage, isScrolled]);
+  const isSolid = useMemo(() => !isHomePage || isScrolled, [isHomePage, isScrolled]);
 
-  // useCallback: stable handler refs so scroll listener doesn't re-attach
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
   }, []);
 
-  const toggleDropdown      = useCallback(() => setDropdownOpen((prev) => !prev), []);
-  const closeDropdown       = useCallback(() => setDropdownOpen(false), []);
-  const toggleMobileMenu    = useCallback(() => setMobileMenuOpen(prev => !prev), []);
-  const closeMobileMenu     = useCallback(() => setMobileMenuOpen(false), []);
-  const handleHomeClick     = useCallback(() => {
+  const toggleDropdown = useCallback(() => setDropdownOpen((prev) => !prev), []);
+  const closeDropdown = useCallback(() => setDropdownOpen(false), []);
+  const toggleMobileMenu = useCallback(() => setMobileMenuOpen((prev) => !prev), []);
+  const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), []);
+  const handleHomeClick = useCallback(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     setMobileMenuOpen(false);
     setDropdownOpen(false);
@@ -65,12 +96,12 @@ export const Navbar = memo(function Navbar() {
       setIsScrolled(true);
       return;
     }
-    handleScroll(); // Check immediately on mount
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage, handleScroll]);
 
-  // Collapse on route changes
   useEffect(() => {
     setMobileMenuOpen(false);
     setDropdownOpen(false);
@@ -98,8 +129,7 @@ export const Navbar = memo(function Navbar() {
       aria-label="Main navigation"
     >
       <div className="rcss-navbar__container">
-        {/* Brand Logo */}
-        <Link to="/" className="rcss-navbar__logo" aria-label="Royal Crown Security Services — Home" onClick={handleHomeClick}>
+        <Link to="/" className="rcss-navbar__logo" aria-label="Royal Crown Security Services - Home" onClick={handleHomeClick}>
           <img
             src={logoImg}
             alt="Royal Crown Security Services"
@@ -112,7 +142,6 @@ export const Navbar = memo(function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Links */}
         <ul className="rcss-navbar__desktop-links" role="list">
           {NAV_LINKS.map((link) => (
             <li
@@ -130,20 +159,28 @@ export const Navbar = memo(function Navbar() {
                     aria-haspopup="true"
                     aria-controls="rcss-navbar-services-dropdown"
                   >
-                    {link.label} <span className="rcss-navbar__chevron-arrow">▼</span>
+                    {link.label}{' '}
+                    <motion.span
+                      className="rcss-navbar__chevron-arrow"
+                      variants={DROPDOWN_CHEVRON_VARIANTS}
+                      animate={dropdownOpen ? 'open' : 'closed'}
+                    >
+                      ▼
+                    </motion.span>
                   </button>
                   <AnimatePresence>
                     {dropdownOpen && (
                       <motion.ul
                         id="rcss-navbar-services-dropdown"
                         className="rcss-navbar__dropdown"
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0  }}
-                        exit={{ opacity: 0, y: 10    }}
-                        transition={{ duration: 0.2  }}
+                        initial="closed"
+                        animate="open"
+                        exit="closed"
+                        variants={DROPDOWN_WRAPPER_VARIANTS}
+                        style={{ originY: 'top', translateX: '-50%' }}
                       >
                         {link.dropdown.map((subItem) => (
-                          <li key={subItem.label}>
+                          <motion.li key={subItem.label} variants={DROPDOWN_ITEM_VARIANTS}>
                             <Link
                               to={subItem.path}
                               className={`rcss-navbar__dropdown-link ${location.pathname === subItem.path ? 'rcss-navbar__dropdown-link--active' : ''}`}
@@ -151,7 +188,7 @@ export const Navbar = memo(function Navbar() {
                             >
                               {subItem.label}
                             </Link>
-                          </li>
+                          </motion.li>
                         ))}
                       </motion.ul>
                     )}
@@ -170,7 +207,6 @@ export const Navbar = memo(function Navbar() {
           ))}
         </ul>
 
-        {/* Right Actions */}
         <div className="rcss-navbar__actions">
           <Link to="/contact" className="rcss-navbar__cta-btn" aria-label="Request a security quote">
             <Button variant={isSolid ? 'primary' : 'secondary'} size="sm">
@@ -193,7 +229,6 @@ export const Navbar = memo(function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
