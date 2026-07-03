@@ -33,10 +33,10 @@
   display: inline-block;
   margin-bottom: var(--space-xs);
   padding-bottom: var(--space-xs);
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-size: clamp(rem, 7vw, 5.5rem) !important;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .rcss-section-heading__title::after {
@@ -44,7 +44,8 @@
   position: absolute;
   bottom: 0;
   height: 4px;
-  width: 80px;
+  width: 100%;
+  max-width: 280px;
   background-color: var(--color-accent);
   border-radius: var(--radius-sm);
 }
@@ -64,4 +65,9 @@
   line-height: 1.6;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.rcss-section-heading__subtitle strong {
+  font-weight: var(--font-weight-bold);
+  color: inherit;
 }

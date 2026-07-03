@@ -1,1 +1,0 @@
-import{j as s}from"./vendor-framer-ChTvfRDv.js";import"./vendor-react-0G06IxQq.js";import{T as i}from"./index-0UpigBC6.js";import"./vendor-gsap-SFc2wnMY.js";import"./vendor-swiper-CLjMzi4o.js";function e(){return s.jsx("div",{className:"rcss-page rcss-testimonials-page",children:s.jsx(i,{})})}export{e as Testimonials,e as default};

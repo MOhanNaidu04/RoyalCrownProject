@@ -8,7 +8,7 @@ import './Services.css';
  * Services page - displays full details and descriptions for each service.
  * Users can open each service-specific detail page from here or from the portfolio section.
  */
-export function Services() {
+export function Services() { 
   return (
     <div className="rcss-page rcss-services-page">
       <Container>

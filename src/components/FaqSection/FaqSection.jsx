@@ -45,7 +45,9 @@ export function FaqSection() {
         <SectionHeading
           badgeText="FAQ"
           // title="Frequently Asked Questions"
-          subtitle="Find answers to common inquiries regarding guard deployment times, safety compliance, and technological setups."
+          subtitle={
+            <strong>Find answers to common inquiries regarding guard deployment times, safety compliance, and technological setups.</strong>
+          }
           align="center"
         />
 
