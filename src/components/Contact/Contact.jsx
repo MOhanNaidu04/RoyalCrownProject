@@ -14,7 +14,7 @@ export function Contact() {
         <SectionHeading
           title="Connect to our Commando's"
           badgeText="Contact Center"
-          align="left"
+          align="center"
           className="rcss-contact-section-heading"
         />
 

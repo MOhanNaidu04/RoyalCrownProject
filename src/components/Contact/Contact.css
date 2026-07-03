@@ -1,6 +1,6 @@
 /* Contact layout */
 .rcss-contact-section-wrapper {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0;
   background-color: var(--color-white);
   overflow: visible;
 }
