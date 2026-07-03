@@ -15,6 +15,28 @@ export function ContactInfo() {
         </p>
       </div>
 
+      <div className="rcss-contact-info__details">
+        <div className="rcss-contact-info__detail-card">
+          <div className="rcss-contact-info__icon-circle" aria-hidden="true">
+            <Icon name="phone" size={22} className="rcss-contact-info__icon" />
+          </div>
+          <div>
+            <h4 className="rcss-contact-info__detail-title">Phone</h4>
+            <p className="rcss-contact-info__detail-text">+91 9573902632</p>
+          </div>
+        </div>
+
+        <div className="rcss-contact-info__detail-card">
+          <div className="rcss-contact-info__icon-circle" aria-hidden="true">
+            <Icon name="mail" size={22} className="rcss-contact-info__icon" />
+          </div>
+          <div>
+            <h4 className="rcss-contact-info__detail-title">Email</h4>
+            <p className="rcss-contact-info__detail-text">royalcrownsecser@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
       <div className="rcss-contact-map">
         <iframe
           title="Royal Crown Security Services location map"

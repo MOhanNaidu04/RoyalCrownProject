@@ -12,14 +12,29 @@ export function Contact() {
     <section className="rcss-contact-section-wrapper">
       <Container>
         <SectionHeading
-          title="Connect With Our Commanders"
+          title="You Have Questions, We Have Answers"
           badgeText="Contact Center"
-          align="center"
+          align="left"
+          className="rcss-contact-section-heading"
         />
 
-        <div className="rcss-contact-layout">
-          <ContactInfo />
-          <ContactForm />
+        <div className="rcss-contact-hero">
+          <div className="rcss-contact-hero__left">
+            <p className="rcss-contact-hero__text">
+              Discover tailored security support, risk assessments, and facilities staffing solutions designed to protect what matters most.
+            </p>
+            <ContactInfo />
+          </div>
+
+          <div className="rcss-contact-hero__right">
+            <div className="rcss-contact-hero__form-card">
+              <h3 className="rcss-contact-hero__form-title">Tell Us What You Need</h3>
+              <p className="rcss-contact-hero__form-subtitle">
+                Our team is ready to assist with every detail, big or small.
+              </p>
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </Container>
     </section>
