@@ -12,7 +12,7 @@ export function Contact() {
     <section className="rcss-contact-section-wrapper">
       <Container>
         <SectionHeading
-          title="You Have Questions, We Have Answers"
+          title="Connect to our Commando's"
           badgeText="Contact Center"
           align="left"
           className="rcss-contact-section-heading"
