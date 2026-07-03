@@ -87,7 +87,7 @@ export const AboutSection = memo(function AboutSection() {
           {/* Right Narrative Column */}
           <div className="rcss-about__content-side">
             <SectionHeading
-              title="Company Profile"
+              badgeText="Company Profile"  
               subtitle="Royal Crown Security Services provides comprehensive security solutions including personal security, surveillance systems, and guard services."
               align="left"
             />
