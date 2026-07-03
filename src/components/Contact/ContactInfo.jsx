@@ -8,10 +8,10 @@ export function ContactInfo() {
   return (
     <div className="rcss-contact-info">
       <div className="rcss-contact-info__summary">
-        <h3 className="rcss-contact-info__summary-title">Company Profile</h3>
+        {/* <h3 className="rcss-contact-info__summary-title"></h3> */}
         <p className="rcss-contact-info__summary-text">
-          Royal Crown Security Services provides comprehensive security solutions including personal security,
-          surveillance systems, and guard services.
+          {/* Royal Crown Security Services provides comprehensive security solutions including personal security, */}
+          {/* surveillance systems, and guard services. */}
         </p>
       </div>
 
