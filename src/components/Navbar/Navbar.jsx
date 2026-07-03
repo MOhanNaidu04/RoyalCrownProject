@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, memo, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, memo, useMemo, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button, Icon } from '@/components';
@@ -39,6 +39,7 @@ export const Navbar = memo(function Navbar() {
   const [mobileMenuOpen,  setMobileMenuOpen]   = useState(false);
   const [dropdownOpen,    setDropdownOpen]     = useState(false);
   const location = useLocation();
+  const servicesDropdownRef = useRef(null);
 
   // useMemo: derived booleans — recalculate only when location/scroll changes
   const isHomePage = useMemo(() => location.pathname === '/', [location.pathname]);
@@ -49,8 +50,8 @@ export const Navbar = memo(function Navbar() {
     setIsScrolled(window.scrollY > 50);
   }, []);
 
-  const handleDropdownEnter = useCallback(() => setDropdownOpen(true),  []);
-  const handleDropdownLeave = useCallback(() => setDropdownOpen(false), []);
+  const toggleDropdown      = useCallback(() => setDropdownOpen((prev) => !prev), []);
+  const closeDropdown       = useCallback(() => setDropdownOpen(false), []);
   const toggleMobileMenu    = useCallback(() => setMobileMenuOpen(prev => !prev), []);
   const closeMobileMenu     = useCallback(() => setMobileMenuOpen(false), []);
   const handleHomeClick     = useCallback(() => {
@@ -74,6 +75,21 @@ export const Navbar = memo(function Navbar() {
     setMobileMenuOpen(false);
     setDropdownOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (!dropdownOpen) {
+      return undefined;
+    }
+
+    const handlePointerDown = (event) => {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handlePointerDown);
+    return () => document.removeEventListener('mousedown', handlePointerDown);
+  }, [dropdownOpen]);
 
   return (
     <nav
@@ -102,22 +118,24 @@ export const Navbar = memo(function Navbar() {
             <li
               key={link.label}
               className={`rcss-navbar__nav-item ${link.dropdown ? 'rcss-navbar__nav-item--has-dropdown' : ''}`}
-              onMouseEnter={link.dropdown ? handleDropdownEnter : undefined}
-              onMouseLeave={link.dropdown ? handleDropdownLeave : undefined}
+              ref={link.dropdown ? servicesDropdownRef : undefined}
             >
               {link.dropdown ? (
                 <>
                   <button
                     type="button"
                     className="rcss-navbar__link-btn"
+                    onClick={toggleDropdown}
                     aria-expanded={dropdownOpen}
                     aria-haspopup="true"
+                    aria-controls="rcss-navbar-services-dropdown"
                   >
                     {link.label} <span className="rcss-navbar__chevron-arrow">▼</span>
                   </button>
                   <AnimatePresence>
                     {dropdownOpen && (
                       <motion.ul
+                        id="rcss-navbar-services-dropdown"
                         className="rcss-navbar__dropdown"
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0  }}
@@ -126,7 +144,11 @@ export const Navbar = memo(function Navbar() {
                       >
                         {link.dropdown.map((subItem) => (
                           <li key={subItem.label}>
-                            <Link to={subItem.path} className={`rcss-navbar__dropdown-link ${location.pathname === subItem.path ? 'rcss-navbar__dropdown-link--active' : ''}`}>
+                            <Link
+                              to={subItem.path}
+                              className={`rcss-navbar__dropdown-link ${location.pathname === subItem.path ? 'rcss-navbar__dropdown-link--active' : ''}`}
+                              onClick={closeDropdown}
+                            >
                               {subItem.label}
                             </Link>
                           </li>

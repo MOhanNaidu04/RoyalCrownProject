@@ -153,7 +153,7 @@
   transition: transform var(--transition-fast);
 }
 
-.rcss-navbar__nav-item:hover .rcss-navbar__chevron-arrow {
+.rcss-navbar__link-btn[aria-expanded="true"] .rcss-navbar__chevron-arrow {
   transform: rotate(180deg);
 }
 
