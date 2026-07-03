@@ -13,7 +13,6 @@ export function Contact() {
       <Container>
         <SectionHeading
           title="Connect With Our Commanders"
-          subtitle="Establish active shielding, request risk assessment audits, or inquire about facilities staffing protocols today."
           badgeText="Contact Center"
           align="center"
         />

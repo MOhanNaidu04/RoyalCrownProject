@@ -11,8 +11,8 @@
 
 .rcss-contact-layout {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(320px, 1.28fr);
-  gap: var(--space-lg);
+  grid-template-columns: minmax(280px, 0.8fr) minmax(360px, 1.2fr);
+  gap: var(--space-xl);
   align-items: start;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .rcss-contact-info__summary {
-  padding: var(--space-md);
+  padding: var(--space-lg);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   background-color: var(--color-bg-light);
@@ -32,7 +32,7 @@
 
 .rcss-contact-info__summary-title {
   font-family: var(--font-family-headings);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   margin: 0 0 var(--space-xs);
@@ -40,14 +40,9 @@
 
 .rcss-contact-info__summary-text {
   margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.45;
+  font-size: 0.94rem;
+  line-height: 1.55;
   color: var(--color-text-muted);
-}
-
-[data-theme="dark"] .rcss-contact-info__card {
-  background-color: var(--color-surface-dark);
-  border-color: var(--color-border-dark);
 }
 
 [data-theme="dark"] .rcss-contact-info__summary {
@@ -66,7 +61,7 @@
 /* Embedded map */
 .rcss-contact-map {
   position: relative;
-  height: 190px;
+  height: 240px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border-light);
@@ -106,12 +101,12 @@
 .rcss-contact-form {
   background-color: var(--color-white);
   border: 1px solid var(--color-border-light);
-  padding: var(--space-xl);
+  padding: calc(var(--space-xl) + 0.5rem);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   width: 100%;
   max-width: 760px;
   justify-self: end;
@@ -125,18 +120,18 @@
 .rcss-form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .rcss-form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: var(--space-xs);
 }
 
 .rcss-form-label {
   font-family: var(--font-family-headings);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   text-transform: uppercase;
@@ -151,7 +146,7 @@
 .rcss-form-select,
 .rcss-form-textarea {
   width: 100%;
-  padding: 0.8rem 0.9rem;
+  padding: var(--space-md);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
   font-family: var(--font-family-body);
@@ -262,25 +257,17 @@
 @media (max-width: 992px) {
   .rcss-contact-layout {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
+    gap: var(--space-2xl);
   }
 
   .rcss-contact-form {
-    padding: var(--space-lg);
+    padding: var(--space-xl);
     max-width: none;
     justify-self: stretch;
   }
 }
 
 @media (min-width: 993px) {
-  .rcss-contact-info__title {
-    font-size: 0.72rem;
-  }
-
-  .rcss-contact-info__content {
-    font-size: 0.64rem;
-  }
-
   .rcss-contact-form {
     min-height: 100%;
   }
@@ -309,12 +296,12 @@
 
 @media (max-width: 576px) {
   .rcss-contact-section-wrapper {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
 
   .rcss-contact-map {
-    height: 170px;
+    height: 220px;
   }
 
   .rcss-form-row {
