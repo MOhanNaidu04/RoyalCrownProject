@@ -78,7 +78,8 @@ export const WhyChooseUs = memo(function WhyChooseUs() {
         <SectionHeading
           // title="Why Leading Brands Trust Royal Crown Security Services"
           subtitle="Deploying reliable guarding and strategic protection systems designed to mitigate risks and secure corporate properties."
-          badgeText="Our Advantages"
+          // badgeText="Our Advantages"
+          title="Our Advantages"
           align="center"
         />
 

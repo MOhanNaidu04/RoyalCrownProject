@@ -67,7 +67,8 @@ export function ServicesSection() {
         <SectionHeading
           // title="Integrated Facility & Protection Solutions"
           subtitle="Scroll to explore our complete range of security, patrol, and facility support services as they glide across the page."
-          badgeText="Our Services"
+          // badgeText="Our Services"
+          title="Our Services"
           align="center"
         />
 

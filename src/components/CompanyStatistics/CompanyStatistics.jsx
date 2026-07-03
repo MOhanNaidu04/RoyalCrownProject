@@ -52,7 +52,8 @@ export function CompanyStatistics() {
         <SectionHeading
           // title="Our Strength in Numbers"
           subtitle="A track record of protective excellence, operational scale, and client commitment across the nation."
-          badgeText="Operational Metrics"
+          // badgeText="Operational Metrics"
+          title="Our Strength in Numbers"
           align="center"
         />
 

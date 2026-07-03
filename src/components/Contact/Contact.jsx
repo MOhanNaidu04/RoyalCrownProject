@@ -13,7 +13,8 @@ export function Contact() {
       <Container>
         <SectionHeading
           // title="Connect to our Commando's"
-          badgeText="Contact Center"
+          // badgeText="Contact Center"
+          title="Contact Center"
           align="center"
           className="rcss-contact-section-heading"
         />

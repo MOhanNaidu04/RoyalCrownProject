@@ -171,7 +171,8 @@ export const Testimonials = memo(function Testimonials() {
         <SectionHeading
           // title="Endorsements From Our Partners"
           subtitle="Read how corporate heads, health systems, and residential properties secure their operations with our guarding."
-          badgeText="Client Testimonials"
+          // badgeText="Client Testimonials"
+          title="Client Testimonials"
           align="center"
         />
 
