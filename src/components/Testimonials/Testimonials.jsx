@@ -121,7 +121,7 @@ export const Testimonials = memo(function Testimonials() {
     <section className="rcss-testimonials-section">
       <Container>
         <SectionHeading
-          title="Endorsements From Our Partners"
+          // title="Endorsements From Our Partners"
           subtitle="Read how corporate heads, health systems, and residential properties secure their operations with our guarding."
           badgeText="Client Testimonials"
           align="center"

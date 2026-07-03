@@ -65,7 +65,7 @@ export function ServicesSection() {
     <section ref={sectionRef} className="rcss-services-showcase">
       <Container>
         <SectionHeading
-          title="Integrated Facility & Protection Solutions"
+          // title="Integrated Facility & Protection Solutions"
           subtitle="Scroll to explore our complete range of security, patrol, and facility support services as they glide across the page."
           badgeText="Our Services"
           align="center"

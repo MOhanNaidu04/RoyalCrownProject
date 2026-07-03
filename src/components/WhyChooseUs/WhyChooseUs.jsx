@@ -76,7 +76,7 @@ export const WhyChooseUs = memo(function WhyChooseUs() {
     <section className="rcss-why-section">
       <Container>
         <SectionHeading
-          title="Why Leading Brands Trust Royal Crown Security Services"
+          // title="Why Leading Brands Trust Royal Crown Security Services"
           subtitle="Deploying reliable guarding and strategic protection systems designed to mitigate risks and secure corporate properties."
           badgeText="Our Advantages"
           align="center"

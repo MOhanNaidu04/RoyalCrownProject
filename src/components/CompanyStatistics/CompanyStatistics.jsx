@@ -50,7 +50,7 @@ export function CompanyStatistics() {
     <section className="rcss-stats-section">
       <Container>
         <SectionHeading
-          title="Our Strength in Numbers"
+          // title="Our Strength in Numbers"
           subtitle="A track record of protective excellence, operational scale, and client commitment across the nation."
           badgeText="Operational Metrics"
           align="center"
