@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Accordion } from '@/components';
+import { Container, Accordion, SectionHeading } from '@/components';
 import './FaqSection.css';
 
 const FAQ_ITEMS = [
@@ -42,13 +42,12 @@ export function FaqSection() {
   return (
     <section className="rcss-faq-section">
       <Container>
-        <h2 className="rcss-faq-section__title">
-          <span className="rcss-faq-section__badge">faq</span>
-        </h2>
-        <p className="rcss-faq-section__subtitle">
-          Find answers to common inquiries regarding guard deployment times, safety compliance,
-          and technological setups.
-        </p>
+        <SectionHeading
+          badgeText="FAQ"
+          // title="Frequently Asked Questions"
+          subtitle="Find answers to common inquiries regarding guard deployment times, safety compliance, and technological setups."
+          align="center"
+        />
 
         <div className="rcss-faq__accordion-container">
           <Accordion items={FAQ_ITEMS} allowMultiple={false} />
