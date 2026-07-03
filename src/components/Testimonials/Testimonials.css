@@ -1,6 +1,6 @@
 /* Testimonials section styling */
 .rcss-testimonials-section {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0;
   overflow: visible;
   background-color: var(--color-white);
 }
@@ -8,7 +8,7 @@
 .rcss-testimonials__slider-wrapper {
   position: relative;
   padding: 0;
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-lg);
   perspective: 2200px;
 }
 

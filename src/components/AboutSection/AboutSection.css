@@ -1,6 +1,6 @@
 /* AboutSection layout styling */
 .rcss-about-section {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0;
   background-color: var(--color-white);
   overflow: visible;
 }
@@ -8,7 +8,7 @@
 .rcss-about-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: var(--space-3xl);
+  gap: var(--space-2xl);
   align-items: flex-start;
 }
 
@@ -82,7 +82,7 @@
   display: flex;
   gap: var(--space-md);
   border-bottom: 2px solid var(--color-border-light);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .rcss-about__tab-btn {
@@ -110,8 +110,8 @@
 
 /* Tabs Viewport box */
 .rcss-about__tabs-body {
-  min-height: 180px;
-  margin-bottom: var(--space-lg);
+  min-height: 140px;
+  margin-bottom: var(--space-md);
 }
 
 .rcss-about__tab-content-flex {
@@ -133,7 +133,7 @@
 
 .rcss-about__tab-text {
   font-family: var(--font-family-body);
-  font-size: var(--font-size-sm);
+  font-size: 0.9rem;
   line-height: var(--line-height-normal);
   color: var(--color-text-dark);
   margin: 0;
@@ -143,14 +143,14 @@
 .rcss-about__ceo-quote {
   border-left: 3px solid var(--color-accent);
   background-color: var(--color-bg-light);
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius-sm);
   margin: var(--space-xs) 0 0 0;
 }
 
 .rcss-about__quote-text {
   font-family: var(--font-family-body);
-  font-size: var(--font-size-md);
+  font-size: 0.95rem;
   font-style: italic;
   line-height: var(--line-height-normal);
   color: var(--color-primary);
@@ -224,7 +224,7 @@
 @media (max-width: 992px) {
   .rcss-about-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-3xl);
+    gap: var(--space-xl);
   }
 
   .rcss-about__visual-side {
