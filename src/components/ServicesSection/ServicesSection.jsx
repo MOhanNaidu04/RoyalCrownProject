@@ -42,7 +42,7 @@ export function ServicesSection() {
           ease: 'none',
           scrollTrigger: {
             trigger: section,
-            start: 'top 88px',
+            start: 'top 40px',
             end: () => `+=${getTravel()}`,
             scrub: 0.85,
             pin: true,

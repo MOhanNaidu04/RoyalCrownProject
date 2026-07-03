@@ -1,4 +1,4 @@
-import React, { memo, useRef } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -162,6 +162,8 @@ function TiltTestimonialCard({ item }) {
  */
 export const Testimonials = memo(function Testimonials() {
   const swiperRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <section className="rcss-testimonials-section">
@@ -173,7 +175,13 @@ export const Testimonials = memo(function Testimonials() {
           align="center"
         />
 
-        <div className="rcss-testimonials__slider-wrapper">
+        <div
+          className="rcss-testimonials__slider-wrapper"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onFocus={() => setIsHovered(true)}
+          onBlur={() => setIsHovered(false)}
+        >
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
             onSwiper={(swiper) => {
@@ -192,8 +200,10 @@ export const Testimonials = memo(function Testimonials() {
               bulletActiveClass: 'rcss-swiper-bullet--active'
             }}
             navigation={{
-              nextEl: '.rcss-swiper-next'
+              nextEl: '.rcss-swiper-next',
+              prevEl: '.rcss-swiper-prev'
             }}
+            onSlideChange={(s) => setCurrentIndex(s.activeIndex)}
             className="rcss-testimonials-swiper"
           >
             {REVIEWS_DATA.map((item) => (
@@ -204,9 +214,20 @@ export const Testimonials = memo(function Testimonials() {
           </Swiper>
 
           {/* Custom Navigation Arrows */}
+          {/* Prev arrow: visible only when hovered and there is at least one previous slide */}
           <button
             type="button"
-            className="rcss-swiper-arrow rcss-swiper-next"
+            className={`rcss-swiper-arrow rcss-swiper-prev ${currentIndex > 0 ? 'rcss-swiper-arrow--visible' : ''}`}
+            aria-label="Previous slide"
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            <Icon name="arrow-right" size={20} style={{ transform: 'rotate(180deg)' }} />
+          </button>
+
+          {/* Next arrow: visible only when hovered */}
+          <button
+            type="button"
+            className={`rcss-swiper-arrow rcss-swiper-next ${isHovered ? 'rcss-swiper-arrow--visible' : ''}`}
             aria-label="Next slide"
             onClick={() => swiperRef.current?.slideNext()}
           >

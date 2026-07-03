@@ -153,6 +153,8 @@
   z-index: 10;
   transition: all var(--transition-fast) ease-in-out;
   box-shadow: var(--shadow-sm);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .rcss-swiper-arrow:hover {
@@ -164,6 +166,20 @@
 
 .rcss-swiper-next {
   right: -20px;
+}
+
+.rcss-swiper-prev {
+  left: -20px;
+}
+
+/* Visible modifier - arrows shown only when this class is applied (e.g. on hover) */
+.rcss-swiper-arrow--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
+}
+.rcss-swiper-prev {
+  left: -20px;
 }
 
 /* Custom Swiper Bullet Pagination dots */

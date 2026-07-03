@@ -1,6 +1,6 @@
 .rcss-hero-section {
   position: relative;
-  min-height: calc(100svh - clamp(72px, 7vw, 92px));
+  min-height: calc(100vh - clamp(72px, 7vw, 92px));
   display: flex;
   align-items: center;
   overflow: hidden;
