@@ -32,10 +32,12 @@
 
 .rcss-contact-info__summary-title {
   font-family: var(--font-family-headings);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-accent);
   margin: 0 0 var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .rcss-contact-info__summary-text {
