@@ -41,6 +41,52 @@ const REVIEWS_DATA = [
     rating: 5,
     avatar: clientMale
   }
+  ,
+  {
+    id: 'r4',
+    name: 'Priya Kaur',
+    designation: 'Facility Manager',
+    company: 'Sunrise Towers',
+    review: 'Professional, punctual and proactive — RCSS completely transformed our site security posture.',
+    rating: 5,
+    avatar: clientFemale
+  },
+  {
+    id: 'r5',
+    name: 'Amit Patel',
+    designation: 'Operations Head',
+    company: 'Centric Logistics',
+    review: 'Their integrated CCTV installation and monitoring service gave us peace of mind. Fast response and clear reporting.',
+    rating: 5,
+    avatar: clientMale
+  },
+  {
+    id: 'r6',
+    name: 'Linda Park',
+    designation: 'Event Producer',
+    company: 'Spotlight Events',
+    review: 'RCSS provided discreet and effective security for our event. Guests commented on their professionalism.',
+    rating: 5,
+    avatar: clientFemale
+  },
+  {
+    id: 'r7',
+    name: 'Omar Al-Sayed',
+    designation: 'Property Director',
+    company: 'Harbourview Estates',
+    review: 'We switched to RCSS after poor service from the previous vendor — the improvement was instant.',
+    rating: 5,
+    avatar: clientMale
+  },
+  {
+    id: 'r8',
+    name: 'Grace Lee',
+    designation: 'CEO',
+    company: 'ClearWater Health',
+    review: 'They designed a layered security plan tailored to our healthcare facility — outstanding expertise.',
+    rating: 5,
+    avatar: clientFemale
+  }
 ];
 
 const ROTATION_RANGE = 22;

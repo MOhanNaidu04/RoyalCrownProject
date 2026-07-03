@@ -208,7 +208,11 @@ export const Navbar = memo(function Navbar() {
         </ul>
 
         <div className="rcss-navbar__actions">
-          <Link to="/contact" className="rcss-navbar__cta-btn" aria-label="Request a security quote">
+          <Link
+            to="/contact"
+            className={`rcss-navbar__cta-btn ${isHomePage && !isScrolled ? 'rcss-navbar__cta-btn--home' : ''}`}
+            aria-label="Request a security quote"
+          >
             <Button variant={isSolid ? 'primary' : 'secondary'} size="sm">
               Secure Quote
             </Button>

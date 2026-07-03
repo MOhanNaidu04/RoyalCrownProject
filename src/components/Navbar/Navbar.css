@@ -409,6 +409,11 @@
   }
 }
 
+/* When on the homepage (transparent nav) make CTA text white for better contrast */
+.rcss-navbar__cta-btn--home .rcss-btn {
+  color: #ffffff !important;
+}
+
 @media (max-width: 576px) {
   .rcss-navbar__logo-text {
     display: none; /* Show only logo image on very small screens */
