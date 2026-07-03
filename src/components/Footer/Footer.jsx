@@ -22,7 +22,7 @@ export const Footer = memo(function Footer() {
         <div className="rcss-footer-grid">
           <div className="rcss-footer-col rcss-footer-col--profile">
             <h3 className="rcss-footer__logo">
-              ROYAL <span className="rcss-text-gold">CROWN</span>
+              Royal Crown Security Services
             </h3>
             <p className="rcss-footer__desc">
               Providing professional security services and peace of mind since 2008. Licensed and insured security provider.

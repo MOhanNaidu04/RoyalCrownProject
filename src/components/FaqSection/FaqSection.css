@@ -14,6 +14,16 @@
   margin: 0;
 }
 
+.rcss-faq-section__badge {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
 .rcss-faq-section__subtitle {
   max-width: 760px;
   margin: var(--space-sm) auto 0;
