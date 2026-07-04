@@ -62,6 +62,22 @@
   width: 100%;
 }
 
+.rcss-service-card__cta-btn {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  box-shadow: none;
+}
+
+.rcss-service-card__cta-btn:hover:not(:disabled),
+.rcss-service-card__cta-btn:focus-visible,
+.rcss-service-card__cta-btn:active:not(:disabled) {
+  background-color: transparent;
+  border-color: var(--color-accent-hover);
+  color: var(--color-accent-hover);
+  transform: none;
+}
+
 /* Dark mode */
 [data-theme="dark"] .rcss-service-card__title {
   color: #F4F6F9;

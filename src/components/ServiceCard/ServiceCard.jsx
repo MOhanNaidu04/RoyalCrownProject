@@ -32,6 +32,7 @@ export const ServiceCard = memo(function ServiceCard({
             <Button
               variant="secondary"
               size="sm"
+              className="rcss-service-card__cta-btn"
               onClick={onCtaClick}
               aria-label={`Read more about ${title}`}
               style={{ width: '100%', marginTop: '1rem' }}

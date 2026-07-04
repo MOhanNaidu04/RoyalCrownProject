@@ -174,12 +174,16 @@ button {
   background-color: var(--color-accent);
   color: var(--color-white);
   border-color: var(--color-accent);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
 }
 
-.rcss-btn--secondary:hover:not(:disabled) {
+.rcss-btn--secondary:hover:not(:disabled),
+.rcss-btn--secondary:focus-visible,
+.rcss-btn--secondary:active:not(:disabled) {
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
   color: var(--color-white);
+  transform: translateY(-1px);
 }
 
 .rcss-btn--outline {
