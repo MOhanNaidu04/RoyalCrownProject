@@ -15,15 +15,13 @@ export function Contact() {
           // title="Connect to our Commando's"
           // badgeText="Contact Center"
           title="Contact Center"
+          subtitle="Discover tailored security support, risk assessments, and facilities staffing solutions designed to protect what matters most."
           align="center"
           className="rcss-contact-section-heading"
         />
 
         <div className="rcss-contact-hero">
           <div className="rcss-contact-hero__left">
-            <p className="rcss-contact-hero__text">
-              Discover tailored security support, risk assessments, and facilities staffing solutions designed to protect what matters most.
-            </p>
             <ContactInfo />
           </div>
 

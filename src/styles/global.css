@@ -172,13 +172,14 @@ button {
 
 .rcss-btn--secondary {
   background-color: var(--color-accent);
-  color: var(--color-primary);
+  color: var(--color-white);
   border-color: var(--color-accent);
 }
 
 .rcss-btn--secondary:hover:not(:disabled) {
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
+  color: var(--color-white);
 }
 
 .rcss-btn--outline {
