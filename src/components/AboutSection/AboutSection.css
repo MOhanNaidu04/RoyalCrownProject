@@ -37,8 +37,8 @@
 /* Floating Experience Badge */
 .rcss-about__experience-badge {
   position: absolute;
-  bottom: -20px;
-  right: -20px;
+  bottom: 1%;
+  right: 1%;
   background-color: var(--color-primary);
   color: var(--color-white);
   border: 2px solid var(--color-accent);
@@ -51,15 +51,17 @@
   z-index: 10;
   min-width: 160px;
   opacity: 0;
-  transform: translateY(12px) scale(0.95);
+  transform: translateY(120px) scale(0.95);
   pointer-events: none;
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .rcss-about__experience-badge--visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    
 }
 
 .rcss-about__experience-badge:hover {
