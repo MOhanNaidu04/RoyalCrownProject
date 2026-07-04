@@ -13,7 +13,9 @@ gsap.registerPlugin(ScrollTrigger);
  */
 export const AboutSection = memo(function AboutSection() {
   const [activeTab, setActiveTab] = useState('mission');
+  const [badgeVisible, setBadgeVisible] = useState(false);
   const imageRef = useRef(null);
+  const sectionRef = useRef(null);
 
   // useCallback: stable handler prevents unnecessary re-renders of tab buttons
   const handleTabClick = useCallback((tabKey) => setActiveTab(tabKey), []);
@@ -44,6 +46,25 @@ export const AboutSection = memo(function AboutSection() {
     };
   }, []);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section || typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBadgeVisible(true);
+          observer.unobserve(section);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   const tabContents = {
     mission: {
       title: 'Our Vision',
@@ -63,7 +84,7 @@ export const AboutSection = memo(function AboutSection() {
   };
 
   return (
-    <section className="rcss-about-section">
+    <section className="rcss-about-section" ref={sectionRef}>
       <Container>
         <div className="rcss-about-grid">
           {/* Left Visual Column */}
@@ -77,7 +98,7 @@ export const AboutSection = memo(function AboutSection() {
               />
               
               {/* Floating Experience Badge */}
-              <div className="rcss-about__experience-badge">
+              <div className={`rcss-about__experience-badge ${badgeVisible ? 'rcss-about__experience-badge--visible' : ''}`}>
                 <span className="rcss-about__exp-number">15+</span>
                 <span className="rcss-about__exp-label">Years of Elite Service</span>
               </div>
@@ -87,7 +108,8 @@ export const AboutSection = memo(function AboutSection() {
           {/* Right Narrative Column */}
           <div className="rcss-about__content-side">
             <SectionHeading
-              // badgeText="Company Profile"  
+              className="rcss-about__section-heading--compact"
+              // badgeText="Company Profile"
               title="Company Profile"
               subtitle="Royal Crown Security Services provides comprehensive security solutions including personal security, surveillance systems, and guard services."
               align="left"
