@@ -177,7 +177,6 @@ export const Navbar = memo(function Navbar() {
                         animate="open"
                         exit="closed"
                         variants={DROPDOWN_WRAPPER_VARIANTS}
-                        style={{ originY: 'top', translateX: '-50%' }}
                       >
                         {link.dropdown.map((subItem) => (
                           <motion.li key={subItem.label} variants={DROPDOWN_ITEM_VARIANTS}>
