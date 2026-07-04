@@ -33,14 +33,14 @@
   display: inline-block;
   margin-bottom: var(--space-xs);
   padding-bottom: var(--space-xs);
-  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-size: 28px;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   line-height: 1.2;
 }
 
 .rcss-about__section-heading--compact .rcss-section-heading__title {
-  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-size: 28px;
 }
 
 .rcss-section-heading__title::after {
