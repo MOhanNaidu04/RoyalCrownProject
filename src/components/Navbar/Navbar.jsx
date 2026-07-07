@@ -148,6 +148,8 @@ export const Navbar = memo(function Navbar() {
               key={link.label}
               className={`rcss-navbar__nav-item ${link.dropdown ? 'rcss-navbar__nav-item--has-dropdown' : ''}`}
               ref={link.dropdown ? servicesDropdownRef : undefined}
+              onMouseEnter={link.dropdown ? () => setDropdownOpen(true) : undefined}
+              onMouseLeave={link.dropdown ? () => setDropdownOpen(false) : undefined}
             >
               {link.dropdown ? (
                 <>
@@ -177,6 +179,8 @@ export const Navbar = memo(function Navbar() {
                         animate="open"
                         exit="closed"
                         variants={DROPDOWN_WRAPPER_VARIANTS}
+                        onMouseEnter={() => setDropdownOpen(true)}
+                        onMouseLeave={() => setDropdownOpen(false)}
                       >
                         {link.dropdown.map((subItem) => (
                           <motion.li key={subItem.label} variants={DROPDOWN_ITEM_VARIANTS}>
