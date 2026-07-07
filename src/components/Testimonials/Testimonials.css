@@ -1,8 +1,8 @@
 /* Testimonials section styling */
 .rcss-testimonials-section {
-  padding: var(--space-xl)0;
+  padding: var(--space-xl) 0;
   overflow: visible;
-  background-color: var(--color-white);
+  background-color: transparent; /* show open page behind cards */
 }
 
 .rcss-testimonials__slider-wrapper {
@@ -10,17 +10,41 @@
   padding: 0;
   margin-top: var(--space-lg);
   perspective: 2200px;
+  overflow: hidden; /* ensure no slide peeking */
 }
 
 .rcss-testimonials-swiper {
-  overflow: visible !important;
-  padding: 0 2rem 2.5rem !important;
+  overflow: hidden !important; /* prevent peeking slides */
+  padding: 0 0 2.5rem !important;
+}
+
+/* Ensure all slides/cards are equal height and aligned */
+.rcss-testimonials-swiper .swiper-wrapper {
+  align-items: stretch; /* make slides stretch to the same height */
 }
 
 .rcss-testimonials__slide {
   height: auto;
   display: flex;
-  width: clamp(300px, 31vw, 410px) !important;
+  width: auto !important; /* allow Swiper to set precise widths for numeric slidesPerView */
+  flex: 0 0 auto;
+  align-items: stretch; /* ensure inner card stretches vertically */
+  box-sizing: border-box;
+}
+
+.rcss-testimonial-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  transition: transform var(--transition-fast), z-index var(--transition-fast);
+}
+
+.rcss-testimonials__slide {
+  height: auto;
+  display: flex;
+  width: auto !important; /* allow Swiper to set precise widths for numeric slidesPerView */
   flex: 0 0 auto;
 }
 
@@ -39,9 +63,9 @@
 
 .rcss-testimonial-card__surface {
   position: relative;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto; /* fill the slide height so all cards match */
   padding: var(--space-xl) !important;
   overflow: hidden;
   border-top: none !important;
@@ -152,9 +176,7 @@
 
 /* Custom Swiper Navigation Buttons */
 .rcss-swiper-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative; /* rendered outside slider in header */
   background-color: var(--color-white);
   border: 1px solid var(--color-border-light);
   width: 42px;
@@ -179,12 +201,29 @@
   box-shadow: var(--shadow-md);
 }
 
-.rcss-swiper-next {
-  right: -16px;
+.rcss-swiper-next,
+.rcss-swiper-prev {
+  /* positioned inline in header */
 }
 
-.rcss-swiper-prev {
-  left: -16px;
+/* Header layout: left arrow, centered heading, right arrow */
+.rcss-testimonials-header {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  margin-bottom: calc(var(--space-md) / 2);
+}
+
+.rcss-testimonials-heading {
+  text-align: center;
+}
+
+.rcss-swiper-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rcss-swiper-arrow--visible {
@@ -218,7 +257,7 @@
 
 /* Dark mode */
 [data-theme="dark"] .rcss-testimonials-section {
-  background-color: var(--color-bg-dark);
+  background-color: transparent; /* keep section transparent in dark mode too */
 }
 
 [data-theme="dark"] .rcss-testimonial-card__surface {
@@ -258,7 +297,36 @@
 
 @media (min-width: 769px) and (max-width: 1200px) {
   .rcss-testimonials__slide {
-    width: clamp(320px, 42vw, 380px) !important;
-    margin-left: -48px;
+    width: auto !important;
+    margin-left: 0;
+  }
+}
+
+/* Desktop: enforce 3 equal-width slides and consistent height */
+@media (min-width: 992px) {
+  .rcss-testimonials-swiper {
+    padding: 0 0 3rem !important;
+  }
+
+  /* Calculate each slide width so 3 fit exactly including two gaps of 28px */
+  .rcss-testimonials__slide {
+    flex: 0 0 calc((100% - 56px) / 3) !important;
+    max-width: calc((100% - 56px) / 3) !important;
+    margin-left: 0;
+    box-sizing: border-box;
+  }
+
+  /* Ensure inner card fills the slide and all cards share same height */
+  .rcss-testimonial-card {
+    height: 100%;
+  }
+
+  .rcss-testimonial-card__surface {
+    min-height: 340px; /* consistent card height - adjust if needed */
+  }
+
+  /* Make sure pagination sits below cards and is centered */
+  .rcss-testimonials__slider-wrapper .swiper-pagination {
+    bottom: -18px !important;
   }
 }

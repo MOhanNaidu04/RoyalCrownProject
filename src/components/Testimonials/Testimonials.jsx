@@ -168,13 +168,40 @@ export const Testimonials = memo(function Testimonials() {
   return (
     <section className="rcss-testimonials-section">
       <Container>
-        <SectionHeading
-          // title="Endorsements From Our Partners"
-          subtitle="Read how corporate heads, health systems, and residential properties secure their operations with our guarding."
-          // badgeText="Client Testimonials"
-          title="Client Testimonials"
-          align="center"
-        />
+        <div
+          className="rcss-testimonials-header"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onFocus={() => setIsHovered(true)}
+          onBlur={() => setIsHovered(false)}
+        >
+          <button
+            type="button"
+            className={`rcss-swiper-arrow rcss-swiper-prev ${currentIndex > 0 ? 'rcss-swiper-arrow--visible' : ''}`}
+            aria-label="Previous slide"
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            <Icon name="arrow-right" size={20} style={{ transform: 'rotate(180deg)' }} />
+          </button>
+
+          <SectionHeading
+            // title="Endorsements From Our Partners"
+            subtitle="Read how corporate heads, health systems, and residential properties secure their operations with our guarding."
+            // badgeText="Client Testimonials"
+            title="Client Testimonials"
+            align="center"
+            className="rcss-testimonials-heading"
+          />
+
+          <button
+            type="button"
+            className={`rcss-swiper-arrow rcss-swiper-next ${isHovered ? 'rcss-swiper-arrow--visible' : ''}`}
+            aria-label="Next slide"
+            onClick={() => swiperRef.current?.slideNext()}
+          >
+            <Icon name="arrow-right" size={20} />
+          </button>
+        </div>
 
         <div
           className="rcss-testimonials__slider-wrapper"
@@ -188,8 +215,20 @@ export const Testimonials = memo(function Testimonials() {
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
-            spaceBetween={0}
-            slidesPerView="auto"
+            spaceBetween={24}
+            slidesPerView={1}
+            centeredSlides={false}
+            slidesPerGroup={1}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              },
+              992: {
+                slidesPerView: 3,
+                spaceBetween: 28
+              }
+            }}
             autoplay={{
               delay: 4000,
               disableOnInteraction: false,
@@ -214,26 +253,7 @@ export const Testimonials = memo(function Testimonials() {
             ))}
           </Swiper>
 
-          {/* Custom Navigation Arrows */}
-          {/* Prev arrow: visible only when hovered and there is at least one previous slide */}
-          <button
-            type="button"
-            className={`rcss-swiper-arrow rcss-swiper-prev ${currentIndex > 0 ? 'rcss-swiper-arrow--visible' : ''}`}
-            aria-label="Previous slide"
-            onClick={() => swiperRef.current?.slidePrev()}
-          >
-            <Icon name="arrow-right" size={20} style={{ transform: 'rotate(180deg)' }} />
-          </button>
-
-          {/* Next arrow: visible only when hovered */}
-          <button
-            type="button"
-            className={`rcss-swiper-arrow rcss-swiper-next ${isHovered ? 'rcss-swiper-arrow--visible' : ''}`}
-            aria-label="Next slide"
-            onClick={() => swiperRef.current?.slideNext()}
-          >
-            <Icon name="arrow-right" size={20} />
-          </button>
+          {/* navigation handled in header (outside slider wrapper) */}
         </div>
       </Container>
     </section>
